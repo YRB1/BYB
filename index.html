@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BYB FORGE — Algorithmic Trading Systems</title>
+<title>BYB Alpha | Algorithmic Trading Bots</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -147,19 +147,19 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  padding:10px 22px;border-radius:6px;
-  font-family:var(--font-sans);font-size:13px;font-weight:600;
-  letter-spacing:.3px;transition:all .18s;cursor:pointer;border:none;
+  padding:11px 26px;border-radius:8px;
+  font-family:var(--font-sans);font-size:13px;font-weight:700;
+  letter-spacing:.3px;transition:all .22s cubic-bezier(.34,1.56,.64,1);cursor:pointer;border:none;
 }
-.btn-primary{background:var(--teal);color:#fff}
-.btn-primary:hover{background:var(--teal2);box-shadow:0 0 24px rgba(38,166,154,.4)}
-.btn-blue{background:var(--blue2);color:#fff}
-.btn-blue:hover{background:#1158c7;box-shadow:0 0 24px rgba(88,166,255,.35)}
-.btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--text)}
-.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
-.btn-lg{padding:13px 28px;font-size:14px}
-.btn-discord{background:#5865f2;color:#fff}
-.btn-discord:hover{background:#4752d1;box-shadow:0 0 20px rgba(88,101,242,.45)}
+.btn-primary{background:linear-gradient(135deg,var(--teal),#1fb8a6);color:#fff;box-shadow:0 8px 20px rgba(38,166,154,.3)}
+.btn-primary:hover{background:linear-gradient(135deg,#1fb8a6,#089981);box-shadow:0 12px 32px rgba(38,166,154,.5),0 0 24px rgba(38,166,154,.2);transform:translateY(-2px)}
+.btn-blue{background:linear-gradient(135deg,var(--blue2),#1158c7);color:#fff;box-shadow:0 8px 20px rgba(88,166,255,.25)}
+.btn-blue:hover{background:linear-gradient(135deg,#1158c7,#0d47a1);box-shadow:0 12px 32px rgba(88,166,255,.4),0 0 24px rgba(88,166,255,.15);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:2px solid var(--border2);color:var(--text);transition:all .22s}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);background:rgba(38,166,154,.08);box-shadow:0 8px 24px rgba(38,166,154,.2);transform:translateY(-2px)}
+.btn-lg{padding:14px 32px;font-size:15px}
+.btn-discord{background:linear-gradient(135deg,#5865f2,#4752d1);color:#fff;box-shadow:0 8px 20px rgba(88,101,242,.35)}
+.btn-discord:hover{background:linear-gradient(135deg,#4752d1,#3a3fa1);box-shadow:0 12px 32px rgba(88,101,242,.5),0 0 24px rgba(88,101,242,.2);transform:translateY(-2px)}
 
 .badge{
   display:inline-flex;align-items:center;gap:5px;
@@ -175,10 +175,10 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 
 .card{
   background:var(--bg2);border:1px solid var(--border);
-  border-radius:8px;transition:border-color .2s,transform .2s,box-shadow .2s;
+  border-radius:12px;transition:border-color .25s,transform .25s,box-shadow .25s;
 }
-.card:hover{border-color:var(--border2);box-shadow:0 8px 32px rgba(0,0,0,.35)}
-.card-glow:hover{border-color:rgba(38,166,154,.3);box-shadow:0 8px 32px rgba(0,0,0,.35),0 0 40px rgba(38,166,154,.06)}
+.card:hover{border-color:rgba(38,166,154,.4);box-shadow:0 12px 40px rgba(0,0,0,.4),0 0 50px rgba(38,166,154,.1);transform:translateY(-4px)}
+.card-glow:hover{border-color:rgba(38,166,154,.4);box-shadow:0 12px 40px rgba(0,0,0,.4),0 0 50px rgba(38,166,154,.15);transform:translateY(-4px)}
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
 .reveal.vis{opacity:1;transform:none}
@@ -379,6 +379,47 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 .hs-lbl{font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:.5px}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
 
+/* Logo panel */
+.hero-logo-panel{
+  display:flex;flex-direction:column;align-items:center;gap:32px;
+  position:relative;
+}
+.hero-logo{display:flex;flex-direction:column;align-items:center;gap:16px}
+.logo-mark-large{
+  width:120px;height:120px;border-radius:16px;
+  background:linear-gradient(135deg,var(--teal),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:48px;font-weight:700;color:#fff;
+  box-shadow:0 16px 48px rgba(38,166,154,.4);
+}
+.logo-wordmark-large{
+  font-family:var(--font-display);font-size:36px;letter-spacing:4px;
+  color:var(--white);line-height:1;text-align:center;
+}
+.logo-wordmark-large em{color:var(--teal);font-style:normal}
+.floating-badges{
+  display:flex;flex-direction:column;gap:12px;
+  position:absolute;top:0;right:-120px;
+}
+.floating-badge{
+  background:rgba(13,17,23,.9);border:1px solid var(--border);
+  border-radius:8px;padding:8px 16px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:1px;font-weight:600;
+  color:var(--text);backdrop-filter:blur(12px);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+  animation:floatingBadge 6s ease-in-out infinite;
+}
+.floating-badge:nth-child(1){animation-delay:0s}
+.floating-badge:nth-child(2){animation-delay:1.5s}
+.floating-badge:nth-child(3){animation-delay:3s}
+.floating-badge:nth-child(4){animation-delay:4.5s}
+@keyframes floatingBadge{
+  0%,100%{transform:translateY(0) rotate(0deg);opacity:0.9}
+  25%{transform:translateY(-8px) rotate(1deg);opacity:1}
+  50%{transform:translateY(0) rotate(0deg);opacity:0.9}
+  75%{transform:translateY(8px) rotate(-1deg);opacity:1}
+}
+
 /* Chart panel */
 .chart-panel{
   background:var(--bg2);border:1px solid var(--border);border-radius:10px;
@@ -423,11 +464,12 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
   position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;
 }
 .pricing-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.pricing-card.featured{border-color:rgba(38,166,154,.4);background:linear-gradient(160deg,rgba(38,166,154,.06),var(--bg2))}
+.pricing-card.featured{border-color:rgba(38,166,154,.4);background:linear-gradient(160deg,rgba(38,166,154,.06),var(--bg2));overflow:visible}
+.pricing-card.featured .pricing-tier{display:none}
 .pricing-card.featured::before{
-  content:'MOST POPULAR';position:absolute;top:16px;right:-28px;
-  background:var(--teal);color:#fff;font-family:var(--font-mono);font-size:8px;font-weight:700;letter-spacing:2px;
-  padding:4px 36px;transform:rotate(45deg);transform-origin:center;
+  content:'MOST POPULAR';position:absolute;top:12px;right:12px;
+  background:var(--teal);color:#fff;font-family:var(--font-mono);font-size:7px;font-weight:700;letter-spacing:1.5px;
+  padding:5px 12px;border-radius:3px;white-space:nowrap;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.3);
 }
 .pricing-tier{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;color:var(--teal);margin-bottom:12px}
 .pricing-name{font-family:var(--font-display);font-size:28px;letter-spacing:2px;color:var(--white);margin-bottom:6px}
@@ -490,7 +532,7 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
   position:relative;overflow:hidden;padding:72px 0;text-align:center;
 }
 .cta-banner::before{
-  content:'FORGE';position:absolute;
+  content:'ALPHA';position:absolute;
   font-family:var(--font-display);font-size:clamp(100px,18vw,220px);letter-spacing:20px;
   color:rgba(38,166,154,.03);top:50%;left:50%;transform:translate(-50%,-50%);
   pointer-events:none;white-space:nowrap;
@@ -603,6 +645,142 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 .faq-a-inner{padding:0 18px 16px;font-size:13px;color:var(--text2);line-height:1.75;border-top:1px solid var(--border)}
 .faq-hidden{display:none}
 
+/* ===================== CREDIT CARD ===================== */
+/* ===================== PAYMENT CHECKOUT ===================== */
+.checkout-wrapper{display:flex;flex-direction:column;gap:32px}
+.product-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.product-btn{
+  padding:16px;border:2px solid var(--border);border-radius:8px;background:var(--bg3);
+  cursor:pointer;transition:all .25s;text-align:center;font-family:var(--font-sans);font-size:13px;font-weight:600;
+  color:var(--text2);
+}
+.product-btn:hover{border-color:var(--teal);color:var(--white)}
+.product-btn.active{border-color:var(--teal);background:rgba(38,166,154,.15);color:var(--teal);box-shadow:0 0 20px rgba(38,166,154,.2)}
+.product-name{display:block;margin-bottom:6px;font-size:14px;font-weight:700}
+.product-price{display:block;font-family:var(--font-mono);font-size:16px;color:var(--white)}
+
+.payment-card-section{
+  perspective:1400px;position:relative;height:300px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;
+}
+.payment-card{
+  width:100%;max-width:420px;aspect-ratio:16/10;border-radius:24px;padding:32px;
+  background:linear-gradient(135deg,#26a69a 0%,#089981 35%,#067668 100%);
+  color:#fff;position:relative;overflow:visible;
+  box-shadow:0 32px 80px rgba(38,166,154,.4),0 12px 32px rgba(38,166,154,.2),0 0 120px rgba(38,166,154,.08);
+  transform-style:preserve-3d;transition:transform .6s cubic-bezier(.34,1.56,.64,1);
+  font-family:var(--font-mono);cursor:pointer;
+}
+.payment-card:hover{transform:translateY(-8px);}
+.payment-card.flipped{transform:rotateY(180deg);}
+.payment-card::before{
+  content:'';position:absolute;inset:0;border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.15) 0%,transparent 50%);
+  animation:shimmer 4s ease-in-out infinite;
+}
+.payment-card::after{
+  content:'';position:absolute;inset:0;border-radius:24px;
+  background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.25) 0%,transparent 60%);
+  pointer-events:none;
+}
+.card-front,.card-back{
+  position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;justify-content:space-between;backface-visibility:hidden;border-radius:24px
+}
+.card-back{
+  transform:rotateY(180deg);justify-content:flex-start;background:linear-gradient(135deg,#26a69a 0%,#089981 100%);
+}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;position:relative;z-index:2}
+.card-logo{
+  font-weight:900;letter-spacing:2px;font-size:20px;text-shadow:0 4px 16px rgba(0,0,0,.5);
+  background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.85) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.card-chip{
+  width:72px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,#ffd700 0%,#ffff00 50%,#ffc700 100%);
+  box-shadow:0 12px 28px rgba(255,215,0,.5),inset 0 3px 6px rgba(255,255,255,.6),inset 0 -3px 8px rgba(0,0,0,.3),0 0 30px rgba(255,215,0,.3);
+  border:2px solid rgba(255,200,0,.4);
+  position:relative;
+  transform:perspective(500px) rotateX(6deg) rotateZ(-3deg);
+}
+.card-chip::before{
+  content:'';position:absolute;inset:0;border-radius:12px;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.4) 50%,transparent 100%);
+}
+.card-chip::after{
+  content:'■ ■ ■ ■\A■ ■ ■ ■\A■ ■ ■ ■';
+  white-space:pre;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:6px;color:rgba(160,110,0,.7);text-shadow:0 1px 3px rgba(0,0,0,.3);font-weight:bold;line-height:.8;
+}
+.card-number-display{
+  font-size:32px;letter-spacing:6px;font-weight:700;
+  text-shadow:0 4px 16px rgba(0,0,0,.4);
+  margin:20px 0;position:relative;z-index:2;word-spacing:8px;
+}
+.card-row{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
+.card-info{display:flex;flex-direction:column;gap:4px}
+.card-label{font-size:8px;letter-spacing:1.8px;opacity:.65;text-transform:uppercase;font-weight:800}
+.card-name{font-size:17px;font-weight:700;letter-spacing:.3px;text-shadow:0 2px 8px rgba(0,0,0,.3);text-transform:uppercase}
+.card-date{font-size:17px;font-weight:700;letter-spacing:.3px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.card-cvv-display{display:none}
+.card-back-stripe{
+  width:100%;height:70px;background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.6) 100%);
+  border-radius:4px;margin-bottom:24px;box-shadow:inset 0 3px 6px rgba(0,0,0,.6);
+}
+.card-back-inner{
+  display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:24px;padding-top:8px
+}
+.card-back-cvv-box{
+  display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-right:12px
+}
+.card-back-cvv-label{font-size:8px;letter-spacing:1.8px;opacity:.7;text-transform:uppercase;font-weight:800}
+.card-back-cvv-show{
+  min-width:80px;height:44px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;
+  letter-spacing:3px;color:#333;box-shadow:inset 0 2px 6px rgba(0,0,0,.15);
+  font-family:var(--font-mono);
+}
+.card-back-text{font-size:10px;opacity:.6;line-height:1.5;text-align:center;margin-top:8px}
+
+.payment-form{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;
+}
+.form-section{margin-bottom:24px}
+.form-section-title{
+  font-size:12px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;
+  margin-bottom:12px;font-weight:700;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-row.full{grid-template-columns:1fr}
+.form-input-group{display:flex;flex-direction:column}
+.form-label{font-size:11px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.form-input{
+  background:var(--bg3);border:2px solid var(--border2);border-radius:8px;
+  padding:12px 14px;color:var(--text);font-family:var(--font-sans);font-size:14px;
+  outline:none;transition:all .22s cubic-bezier(.34,1.56,.64,1);
+}
+.form-input:focus{border-color:var(--teal);background:var(--bg);box-shadow:0 0 0 3px rgba(38,166,154,.12),0 0 20px rgba(38,166,154,.2)}
+.form-input.error{border-color:var(--bear);background:rgba(248,81,73,.08);box-shadow:0 0 0 3px rgba(248,81,73,.12)}
+.amount-summary{
+  background:rgba(38,166,154,.08);border-left:3px solid var(--teal);border-radius:8px;padding:16px;
+  margin-bottom:20px;
+}
+.summary-row{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:13px;
+}
+.summary-row.total{border-top:1px solid var(--border);padding-top:12px;margin-top:12px;font-weight:700;font-size:16px;color:var(--white)}
+.checkout-btn{
+  width:100%;padding:14px;border:none;border-radius:8px;background:var(--teal);color:#fff;
+  font-family:var(--font-sans);font-size:14px;font-weight:700;cursor:pointer;
+  transition:all .25s;letter-spacing:.5px;text-transform:uppercase;
+}
+.checkout-btn:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(38,166,154,.35)}
+.checkout-btn.processing{background:var(--bg4);cursor:not-allowed}
+.trust-icons{display:flex;gap:12px;justify-content:center;margin-top:16px;font-size:12px;color:var(--text3)}
+.trust-badge{display:flex;align-items:center;gap:4px}
+@keyframes shimmer{0%{transform:translate(-100%,-100%)}100%{transform:translate(100%,100%)}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 24px 48px rgba(38,166,154,.25),0 0 60px rgba(38,166,154,.12)}50%{box-shadow:0 24px 60px rgba(38,166,154,.35),0 0 80px rgba(38,166,154,.18)}}
+
 /* ===================== ABOUT ===================== */
 .about-hero{
   padding:80px 0 60px;
@@ -703,7 +881,7 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 .csb-lbl{font-size:11px;color:var(--text3)}
 
 /* ===================== CONTACT ===================== */
-.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .contact-info{position:sticky;top:100px}
 .contact-h2{font-family:var(--font-display);font-size:clamp(32px,4vw,52px);letter-spacing:2px;color:var(--white);margin-bottom:16px;line-height:1}
 .contact-p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:32px}
@@ -768,10 +946,10 @@ button{cursor:pointer;border:none;font-family:var(--font-sans)}
 .ds-lbl{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px}
 
 /* ===================== ENHANCED FOOTER ===================== */
-footer{background:var(--bg2);border-top:1px solid var(--border)}
+footer{background:#060a0e;border-top:1px solid var(--border)}
 
 .footer-newsletter{
-  background:linear-gradient(135deg,rgba(38,166,154,.08),rgba(88,166,255,.05));
+  background:var(--bg);
   border-bottom:1px solid var(--border);
   padding:36px 0;
 }
@@ -779,8 +957,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
   max-width:1200px;margin:0 auto;padding:0 24px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
 }
-.fn-left h3{font-family:var(--font-display);font-size:24px;letter-spacing:2px;color:var(--white)}
-.fn-left p{font-size:13px;color:var(--text2);margin-top:4px}
+.fn-left h3{font-family:var(--font-display);font-size:24px;letter-spacing:2px;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,.85),0 0 22px rgba(38,166,154,.12)}
+.fn-left p{font-size:13px;color:var(--text2);margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.65)}
 .fn-form{display:flex;gap:8px;flex-wrap:wrap}
 .fn-input{
   background:var(--bg);border:1px solid var(--border2);border-radius:6px;
@@ -796,22 +974,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
 }
 .fn-submit:hover{background:var(--teal2);box-shadow:0 4px 16px rgba(38,166,154,.4)}
 
-.footer-main{padding:48px 0 24px}
+.footer-main{padding:48px 0 24px;background:var(--bg)}
 .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
 .footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand p{font-size:13px;color:var(--text3);line-height:1.7;margin-top:12px;max-width:240px}
+.footer-brand p{font-size:13px;color:var(--text3);line-height:1.7;margin-top:12px;max-width:240px;text-shadow:0 1px 4px rgba(0,0,0,.65)}
 .footer-brand-badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .fb-badge{
   display:flex;align-items:center;gap:5px;
   background:var(--bg3);border:1px solid var(--border);border-radius:4px;
-  padding:5px 9px;font-size:10px;color:var(--text3);
+  padding:5px 9px;font-size:10px;color:var(--text3);text-shadow:0 1px 3px rgba(0,0,0,.5);
 }
 .fb-badge span{color:var(--teal)}
-.footer-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--teal);margin-bottom:14px}
+.footer-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--teal);margin-bottom:14px;text-shadow:0 0 14px rgba(38,166,154,.5),0 1px 4px rgba(0,0,0,.75)}
 .footer-links-list{display:flex;flex-direction:column;gap:9px}
-.footer-links-list button{background:none;border:none;padding:0;font-size:13px;color:var(--text3);cursor:pointer;text-align:left;transition:color .15s;font-family:var(--font-sans)}
+.footer-links-list button{background:none;border:none;padding:0;font-size:13px;color:var(--text3);cursor:pointer;text-align:left;transition:color .15s;font-family:var(--font-sans);text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .footer-links-list button:hover{color:var(--text)}
-.footer-links-list a{font-size:13px;color:var(--text3);display:block;transition:color .15s}
+.footer-links-list a{font-size:13px;color:var(--text3);display:block;transition:color .15s;text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .footer-links-list a:hover{color:var(--text)}
 
 .footer-divider{border:none;border-top:1px solid var(--border);margin-bottom:24px}
@@ -824,8 +1002,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
   padding:18px 24px;border-right:1px solid var(--border);text-align:center;
 }
 .fm-stat:last-child{border-right:none}
-.fm-val{font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--white)}
-.fm-lbl{font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:.5px}
+.fm-val{font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--white);text-shadow:0 0 18px currentColor,0 2px 6px rgba(0,0,0,.75)}
+.fm-lbl{font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 
 .footer-bottom{
   display:flex;align-items:center;justify-content:space-between;
@@ -858,6 +1036,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
   .team-grid{grid-template-columns:1fr 1fr}
   .platforms-grid{grid-template-columns:1fr 1fr}
   .contact-layout{grid-template-columns:1fr}
+  .product-selector{grid-template-columns:1fr}
+  .payment-card-section{height:auto}
+  .checkout-wrapper{gap:24px}
   .contact-info{position:static}
   .footer-top{grid-template-columns:1fr 1fr 1fr;gap:28px}
   .faq-layout{grid-template-columns:1fr}
@@ -919,7 +1100,240 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
   .about-stats-inner{grid-template-columns:1fr 1fr}
   .countries-stats-bar{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
+  .stats-banner{grid-template-columns:1fr 1fr}
+  .comparison-table{overflow-x:auto}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonial{width:100%}
+  .featured-logos{grid-template-columns:repeat(3,1fr)}
+  .why-cards{grid-template-columns:1fr}
+  .faq-item{margin-bottom:12px}
 }
+
+/* ===== 1. LIVE PERFORMANCE STATS BANNER ===== */
+.stats-banner{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  background:linear-gradient(135deg,rgba(38,166,154,.08),rgba(88,166,255,.04));
+  border:1px solid rgba(38,166,154,.15);border-radius:12px;padding:24px;
+  margin-bottom:48px;
+}
+.stat-item{display:flex;flex-direction:column;gap:8px}
+.stat-label{font-size:11px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+.stat-value{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--teal)}
+.stat-change{font-size:11px;color:var(--bull);display:flex;align-items:center;gap:4px}
+
+/* ===== 2. ANIMATED FEATURES GRID ===== */
+.features-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:48px 0;
+}
+.feature-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;
+  text-align:center;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(38,166,154,.2),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.feature-card:hover{
+  transform:translateY(-6px);border-color:var(--teal);
+  box-shadow:0 12px 40px rgba(38,166,154,.2);
+}
+.feature-card:hover::before{opacity:1}
+.feature-icon{font-size:40px;margin-bottom:12px}
+.feature-title{font-weight:700;color:var(--white);margin-bottom:10px}
+.feature-desc{font-size:12px;color:var(--text3);line-height:1.5}
+
+/* ===== 3. PRODUCT COMPARISON TABLE ===== */
+.comparison-table{
+  width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;margin:32px 0;
+}
+.comp-table{
+  width:100%;border-collapse:collapse;font-size:13px;
+}
+.comp-table th{
+  background:linear-gradient(135deg,rgba(38,166,154,.1),rgba(88,166,255,.05));
+  padding:16px;border-bottom:2px solid var(--border);font-weight:700;color:var(--white);
+  text-align:left;
+}
+.comp-table td{
+  padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text2);
+}
+.comp-table tbody tr:hover{background:rgba(38,166,154,.04)}
+.comp-check{color:var(--bull);font-weight:700}
+.comp-cross{color:var(--text3);opacity:.5}
+.comp-highlight{background:rgba(38,166,154,.08);color:var(--teal);font-weight:700}
+
+/* ===== 4. TESTIMONIALS CAROUSEL ===== */
+.testimonials-carousel-wrapper{
+  position:relative;margin:48px 0;
+}
+.testimonials-carousel{
+  display:flex;overflow:hidden;width:100%;position:relative;
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  transition:all .6s cubic-bezier(.22,.68,.88,.65);
+}
+.testimonial-slide{
+  flex:0 0 100%;width:100%;padding:32px;display:none;
+  animation:slideIn .6s cubic-bezier(.22,.68,.88,.65);
+}
+.testimonial-slide[data-active="true"]{
+  display:block;
+}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.testimonial-card{
+  padding:0;display:flex;flex-direction:column;justify-content:space-between;
+  background:transparent;border:none;box-shadow:none;
+  min-height:280px;
+}
+.testimonial-card:hover{
+  transform:none;box-shadow:none;border-color:transparent;background:transparent;
+}
+.testimonial-stars{color:var(--yellow);font-size:13px;margin-bottom:12px;letter-spacing:1px}
+.testimonial-text{font-size:15px;line-height:1.8;color:var(--white);margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px;margin-top:auto}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue));flex-shrink:0}
+.testimonial-name{font-weight:600;color:var(--white)}
+.testimonial-role{font-size:11px;color:var(--text3)}
+
+.carousel-nav{
+  display:flex;align-items:center;justify-content:center;gap:20px;margin-top:24px;
+}
+.carousel-btn{
+  width:40px;height:40px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);
+  color:var(--text2);cursor:pointer;font-size:18px;font-weight:700;
+  transition:.2s;display:flex;align-items:center;justify-content:center;
+}
+.carousel-btn:hover{
+  background:var(--teal);border-color:var(--teal);color:#fff;transform:scale(1.1);
+}
+.carousel-dots{
+  display:flex;gap:8px;
+}
+.dot{
+  width:10px;height:10px;border-radius:50%;background:var(--border);cursor:pointer;
+  transition:all .3s;
+}
+.dot.active{
+  background:var(--teal);box-shadow:0 0 8px rgba(38,166,154,.5);
+  width:24px;border-radius:5px;
+}
+.dot:hover{background:var(--teal)}
+
+@media(max-width:768px){
+  .testimonials-carousel-wrapper{padding:30px 16px}
+  .testimonial-card{padding:24px}
+  .carousel-nav{gap:12px}
+}
+
+/* ===== 5. FEATURED IN SECTION ===== */
+.featured-section{
+  margin:48px 0;text-align:center;
+}
+.featured-title{font-size:13px;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;font-weight:700}
+.featured-logos{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:24px;align-items:center;
+}
+.featured-logo{
+  height:40px;display:flex;align-items:center;justify-content:center;
+  color:var(--text3);font-weight:700;font-size:12px;
+  transition:all .3s;opacity:.6;
+}
+.featured-logo:hover{opacity:1;color:var(--teal)}
+
+/* ===== 6. WHY BYB ALPHA SECTION ===== */
+.why-section{
+  margin:64px 0;
+}
+.why-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.why-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;
+  display:flex;flex-direction:column;gap:16px;transition:all .3s;
+}
+.why-card:hover{border-color:var(--teal);box-shadow:0 12px 40px rgba(38,166,154,.2);transform:translateY(-4px)}
+.why-problem{
+  font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px;
+}
+.why-problem::before{content:'⚠️';font-size:16px}
+.why-arrow{
+  font-size:20px;color:var(--teal);text-align:center;opacity:.5;
+}
+.why-solution{
+  font-size:15px;font-weight:700;color:var(--white);
+}
+.why-benefit{
+  font-size:12px;color:var(--bull);font-weight:600;
+}
+
+/* ===== 7. PERFORMANCE CHART PREVIEW ===== */
+.perf-chart-section{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:28px;margin:48px 0;
+}
+.perf-chart-title{font-size:13px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;font-weight:700}
+.perf-chart-canvas-wrap{
+  position:relative;height:320px;background:var(--bg3);border-radius:8px;padding:16px;
+  border:1px solid var(--border);
+}
+.perf-chart-canvas{width:100%;height:100%}
+.perf-stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px;
+}
+.perf-stat{
+  background:rgba(38,166,154,.08);border:1px solid rgba(38,166,154,.15);border-radius:8px;
+  padding:12px;text-align:center;
+}
+.perf-stat-val{font-family:var(--font-mono);font-weight:700;color:var(--teal);font-size:16px}
+.perf-stat-lbl{font-size:10px;color:var(--text3);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+
+/* ===== 8. INTERACTIVE FAQ ===== */
+.faq-item{
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;transition:all .25s;margin-bottom:14px;
+}
+.faq-header{
+  padding:16px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  transition:background .25s;user-select:none;
+}
+.faq-header:hover{background:var(--bg3)}
+.faq-question{font-weight:600;color:var(--white);transition:color .25s}
+.faq-header:hover .faq-question{color:var(--teal)}
+.faq-toggle{
+  font-size:18px;color:var(--text2);transition:transform .3s;flex-shrink:0;
+}
+.faq-item.open .faq-toggle{transform:rotate(180deg) scale(1.1);color:var(--teal)}
+.faq-content{
+  max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);
+  background:rgba(38,166,154,.04);border-top:1px solid var(--border);
+}
+.faq-item.open .faq-content{max-height:500px}
+.faq-answer{padding:16px 20px;font-size:13px;color:var(--text2);line-height:1.7}
+
+/* ===== 9. COUNTER ANIMATIONS ===== */
+.ctr-box{
+  font-family:var(--font-mono);font-size:32px;font-weight:700;color:var(--teal);
+}
+
+/* ===== 10. FOOTER TRUST BADGES ===== */
+.footer-trust-badges{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;
+  background:rgba(38,166,154,.05);border:1px solid rgba(38,166,154,.1);
+  border-radius:10px;padding:20px;
+}
+.trust-badge-item{
+  display:flex;align-items:center;gap:10px;padding:8px;
+}
+.trust-badge-icon{font-size:20px}
+.trust-badge-text{
+  display:flex;flex-direction:column;
+}
+.trust-badge-value{font-weight:700;color:var(--teal);font-size:13px}
+.trust-badge-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+
+@keyframes countUp{from{opacity:0}to{opacity:1}}
 </style>
 </head>
 <body>
@@ -928,8 +1342,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-logo">
-      <div class="logo-mark">BF</div>
-      <span class="logo-wordmark">BYB<em>FORGE</em></span>
+      <div class="logo-mark">BA</div>
+      <span class="logo-wordmark">BYB<em>ALPHA</em></span>
     </div>
     <nav class="nav-links" id="desktopNav">
       <button class="nav-btn active" onclick="showPage('home')">Home</button>
@@ -1005,7 +1419,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
     <div class="pmsg">
       <div class="pmsg-avatar bot">AI</div>
       <div>
-        <div class="pmsg-bubble">Hey! 👋 I'm Forge AI. Ask me anything about BYB FORGE — setup, pricing, performance, or how to get your first bot running.</div>
+        <div class="pmsg-bubble">Hey! 👋 I'm Forge AI. Ask me anything about BYB Alpha — setup, pricing, performance, or how to get your first bot running.</div>
         <div class="pmsg-time">Just now</div>
       </div>
     </div>
@@ -1049,7 +1463,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             <span class="line-teal">SMARTER.</span>
             <span class="line-thin">NOT HARDER.</span>
           </h1>
-          <p class="hero-sub reveal reveal-d2">BYB FORGE builds battle-tested algorithmic trading systems for serious traders. Deploy institutional-grade Expert Advisors in minutes — or commission a fully custom bot built to your exact strategy.</p>
+          <p class="hero-sub reveal reveal-d2">BYB Alpha builds battle-tested algorithmic trading systems for serious traders. Deploy institutional-grade Expert Advisors in minutes — or commission a fully custom bot built to your exact strategy.</p>
           <div class="hero-stats-row reveal reveal-d3">
             <div class="hero-stat">
               <div class="hs-val" style="color:var(--bull)" id="ctr-winrate">0%</div>
@@ -1073,28 +1487,48 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             <button class="btn btn-ghost btn-lg" onclick="showPage('contact')">Commission a Custom Bot</button>
           </div>
         </div>
-        <!-- Chart panel -->
-        <div class="chart-panel reveal reveal-d2">
-          <div class="chart-toolbar">
-            <span class="chart-pair">XAUUSD · H1</span>
-            <span style="display:flex;gap:8px;align-items:center">
-              <span class="chart-price">▲ <span id="heroPrice">2318.40</span></span>
-              <span style="font-family:var(--font-mono);font-size:10px;color:var(--text3)">+0.31%</span>
-            </span>
+        <!-- Logo and floating badges -->
+        <div class="hero-logo-panel reveal reveal-d2">
+          <div class="hero-logo">
+            <div class="logo-mark-large">BF</div>
+            <div class="logo-wordmark-large">BYB<em>FORGE</em></div>
           </div>
-          <div class="chart-canvas-wrap" style="position:relative">
-            <canvas id="heroChart" width="520" height="220"></canvas>
-            <div class="chart-overlay-stats">
-              <div class="cos-item">WR <span class="v">89.4%</span></div>
-              <div class="cos-item">DD <span class="v" style="color:var(--bear)">2.1%</span></div>
-              <div class="cos-item">TRADES <span class="v">847</span></div>
-            </div>
-            <div class="trade-signal">▲ LONG SIGNAL ACTIVE</div>
+          <div class="floating-badges">
+            <div class="floating-badge badge-bull">✓ 89.4% WIN RATE</div>
+            <div class="floating-badge badge-teal">✓ $2.8M GENERATED</div>
+            <div class="floating-badge badge-blue">✓ 47 COUNTRIES</div>
+            <div class="floating-badge badge-purple">✓ 3+ YEARS LIVE</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- LIVE PERFORMANCE STATS BANNER -->
+  <div class="container" style="margin-top:-40px;position:relative;z-index:10">
+    <div class="stats-banner reveal">
+      <div class="stat-item">
+        <div class="stat-label">Active Users</div>
+        <div class="stat-value ctr-box" data-target="4218">4,218</div>
+        <div class="stat-change">↑ 328 this month</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Cumulative Profit</div>
+        <div class="stat-value ctr-box" data-target="8450000">£8.45M</div>
+        <div class="stat-change">↑ 14% YoY</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Avg Win Rate</div>
+        <div class="stat-value ctr-box" data-target="89.4">89.4%</div>
+        <div class="stat-change">↑ 2.1pp this year</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Volume Traded</div>
+        <div class="stat-value ctr-box" data-target="12500000">£12.5M</div>
+        <div class="stat-change">↑ 22% month-over-month</div>
+      </div>
+    </div>
+  </div>
 
   <!-- BENEFITS STRIP -->
   <div class="benefits-strip">
@@ -1105,6 +1539,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div class="benefit-title">Deploy in Minutes</div>
           <div class="benefit-sub">Full setup guides, MT4/MT5 plugins, and video walkthroughs included.</div>
         </div>
+        <canvas class="benefit-sparkline" id="benefitSpark1" height="24"></canvas>
       </div>
       <div class="benefit">
         <div class="benefit-icon" style="background:var(--blue-dim)">🔒</div>
@@ -1112,6 +1547,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div class="benefit-title">30-Day Guarantee</div>
           <div class="benefit-sub">Not satisfied? Get a full refund. No questions asked.</div>
         </div>
+        <canvas class="benefit-sparkline" id="benefitSpark2" height="24"></canvas>
       </div>
       <div class="benefit">
         <div class="benefit-icon" style="background:var(--bull-dim)">📊</div>
@@ -1119,6 +1555,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div class="benefit-title">Live Verified Track Record</div>
           <div class="benefit-sub">3+ years of audited Myfxbook data. Real accounts, real results.</div>
         </div>
+        <canvas class="benefit-sparkline" id="benefitSpark3" height="24"></canvas>
       </div>
       <div class="benefit">
         <div class="benefit-icon" style="background:rgba(188,140,255,.1)">💬</div>
@@ -1126,6 +1563,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div class="benefit-title">24/7 Community Support</div>
           <div class="benefit-sub">Active Discord with 4,218+ traders + AI support always on.</div>
         </div>
+        <canvas class="benefit-sparkline" id="benefitSpark4" height="24"></canvas>
       </div>
     </div>
   </div>
@@ -1225,6 +1663,223 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div style="text-align:center;margin-top:24px">
         <p style="font-size:13px;color:var(--text3)">Need something bespoke? <button style="background:none;border:none;color:var(--teal);font-size:13px;cursor:pointer;font-family:var(--font-sans)" onclick="showPage('contact')">Commission a custom bot via AlphaForge →</button></p>
       </div>
+
+      <!-- COMPARISON TABLE -->
+      <div style="margin-top:56px">
+        <div class="section-header reveal">
+          <div class="eyebrow">DETAILED SPECS</div>
+          <div class="section-title" style="font-size:36px">SIDE-BY-SIDE <span class="teal">COMPARISON</span></div>
+        </div>
+        <div class="comparison-table reveal reveal-d2">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Unwicked Lite</th>
+                <th>Unwicked Pro</th>
+                <th>Forge Apex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Price</strong></td>
+                <td class="comp-highlight">£79</td>
+                <td class="comp-highlight">£149</td>
+                <td class="comp-highlight">£299</td>
+              </tr>
+              <tr>
+                <td><strong>Trading Pairs</strong></td>
+                <td>2 (EUR/USD, GBP/USD)</td>
+                <td>12+ major + XAUUSD</td>
+                <td>All FX, Gold, Indices, Crypto</td>
+              </tr>
+              <tr>
+                <td><strong>Platforms</strong></td>
+                <td>MT4, MT5</td>
+                <td>MT4, MT5, cTrader</td>
+                <td>MT4, MT5, cTrader, NinjaTrader 8</td>
+              </tr>
+              <tr>
+                <td><strong>Live Win Rate</strong></td>
+                <td class="comp-highlight">84.2%</td>
+                <td class="comp-highlight">89.4%</td>
+                <td class="comp-highlight">92.1%</td>
+              </tr>
+              <tr>
+                <td><strong>Timeframes</strong></td>
+                <td>M15, H1</td>
+                <td>M15, H1, H4, D1</td>
+                <td>All (1m - Monthly)</td>
+              </tr>
+              <tr>
+                <td><strong>Risk Management</strong></td>
+                <td>✓ Core safeguards</td>
+                <td>✓ Advanced + Drawdown breakers</td>
+                <td>✓ Portfolio-level + AI optimization</td>
+              </tr>
+              <tr>
+                <td><strong>Alerts</strong></td>
+                <td>Discord community</td>
+                <td>Telegram + Discord</td>
+                <td>Telegram + Discord + Custom API</td>
+              </tr>
+              <tr>
+                <td><strong>Account Licenses</strong></td>
+                <td>1 live account</td>
+                <td>3 live accounts</td>
+                <td>Unlimited accounts</td>
+              </tr>
+              <tr>
+                <td><strong>AI Entries</strong></td>
+                <td class="comp-cross">✗</td>
+                <td class="comp-cross">✗</td>
+                <td class="comp-check">✓</td>
+              </tr>
+              <tr>
+                <td><strong>Prop Firm Safe Mode</strong></td>
+                <td class="comp-cross">✗</td>
+                <td class="comp-check">✓</td>
+                <td class="comp-check">✓</td>
+              </tr>
+              <tr>
+                <td><strong>Strategy Updates</strong></td>
+                <td>Community-only</td>
+                <td class="comp-check">✓ Free forever</td>
+                <td class="comp-check">✓ Free forever</td>
+              </tr>
+              <tr>
+                <td><strong>Support Level</strong></td>
+                <td>Discord community</td>
+                <td>Standard support</td>
+                <td>Priority 24/7 support</td>
+              </tr>
+              <tr>
+                <td><strong>Money-Back Guarantee</strong></td>
+                <td class="comp-check">✓ 30 days</td>
+                <td class="comp-check">✓ 30 days</td>
+                <td class="comp-check">✓ 30 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PERFORMANCE CHART PREVIEW -->
+      <div class="perf-chart-section reveal reveal-d3" style="margin-top:56px">
+        <div class="perf-chart-title">EQUITY CURVE — PRO BOT (LIVE)</div>
+        <div class="perf-chart-canvas-wrap">
+          <canvas id="perfChart" class="perf-chart-canvas"></canvas>
+        </div>
+        <div class="perf-stats-row">
+          <div class="perf-stat">
+            <div class="perf-stat-val">89.4%</div>
+            <div class="perf-stat-lbl">Win Rate</div>
+          </div>
+          <div class="perf-stat">
+            <div class="perf-stat-val">+£47.2K</div>
+            <div class="perf-stat-lbl">YTD Profit</div>
+          </div>
+          <div class="perf-stat">
+            <div class="perf-stat-val">2.1</div>
+            <div class="perf-stat-lbl">Profit Factor</div>
+          </div>
+          <div class="perf-stat">
+            <div class="perf-stat-val">8.3%</div>
+            <div class="perf-stat-lbl">Max Drawdown</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY BYB ALPHA SECTION -->
+      <div style="margin-top:64px">
+        <div class="section-header reveal">
+          <div class="eyebrow">THE DIFFERENCE</div>
+          <div class="section-title">WHY <span class="teal">BYB ALPHA</span> WINS</div>
+        </div>
+        <div class="why-cards reveal reveal-d2" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="why-card">
+            <div class="why-problem">Manual Trading is Exhausting</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">24/7 Automated Trading While You Sleep</div>
+            <div class="why-benefit">Trade 3,000+ candles daily without staring at screens</div>
+          </div>
+          <div class="why-card">
+            <div class="why-problem">Bots are Unpredictable</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">Institutional-Grade Risk Management</div>
+            <div class="why-benefit">Proven 3+ years on Myfxbook — not curve-fitted backtests</div>
+          </div>
+          <div class="why-card">
+            <div class="why-problem">Brokers Restrict Scalping</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">Prop Firm Safe Mode (Pro & Apex)</div>
+            <div class="why-benefit">Trade on funded accounts without drawdown threats</div>
+          </div>
+          <div class="why-card">
+            <div class="why-problem">Single-Bot Strategies Fail</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">Multi-Pair Portfolio Approach (Pro & Apex)</div>
+            <div class="why-benefit">Diversified edge — 12+ pairs means consistent profit</div>
+          </div>
+          <div class="why-card">
+            <div class="why-problem">AI Hype Is Overhyped</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">Genuine ML Assistance (Apex Only)</div>
+            <div class="why-benefit">AI-assisted entries, not AI hallucinations</div>
+          </div>
+          <div class="why-card">
+            <div class="why-problem">Custom Bots Cost £5K+</div>
+            <div class="why-arrow">⬇️</div>
+            <div class="why-solution">AlphaForge from £299</div>
+            <div class="why-benefit">Full source code ownership, 3 revisions, 24h turnaround</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED IN SECTION -->
+      <div class="featured-section reveal" style="margin-top:56px">
+        <div class="featured-title">FEATURED IN & TRUSTED BY</div>
+        <div class="featured-logos" style="grid-template-columns: repeat(5, 1fr);">
+          <div class="featured-logo">Cointelegraph</div>
+          <div class="featured-logo">Forexpros</div>
+          <div class="featured-logo">Trading View</div>
+          <div class="featured-logo">FX Street</div>
+          <div class="featured-logo">Broker Direct</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ANIMATED FEATURES GRID (moved here from earlier) -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">KEY STRENGTHS</div>
+        <div class="section-title">FOUR PILLARS OF <span class="teal">EDGE</span></div>
+      </div>
+      <div class="features-grid reveal" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Precise Entry Logic</div>
+          <div class="feature-desc">Proprietary wick rejection algorithm catches reversals before they happen. 89.4% win rate on Pro tier.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">Multi-Layer Protection</div>
+          <div class="feature-desc">News filters, spread checks, circuit breakers, drawdown limits. Safely trade through volatility.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚛️</div>
+          <div class="feature-title">AI-Assisted (Apex)</div>
+          <div class="feature-desc">Machine learning refines entry timing. Optional AI boost with 92.1% win rate on Apex.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Compounding Edge</div>
+          <div class="feature-desc">Profit scaling and position sizing adapted to account growth. Risk-reward optimized for 3+ year run.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1233,23 +1888,130 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
     <div class="container">
       <div class="section-header reveal">
         <div class="eyebrow">SOCIAL PROOF</div>
-        <div class="section-title">TRADERS <span class="teal">TRUST</span> BYBFORGE</div>
+        <div class="section-title">TRADERS <span class="teal">TRUST</span> BYB ALPHA</div>
       </div>
-      <div class="testimonials-grid">
-        <div class="tcard card card-glow reveal">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-quote">"Running the Pro bot for 6 months now. Up 34% on my $10k account. The wick detection logic is genuinely insane — catches moves I'd miss every time."</p>
-          <div class="tc-user"><div class="tc-avatar">JR</div><div><div class="tc-name">James R.</div><div class="tc-loc">🇬🇧 London, UK</div></div></div>
-        </div>
-        <div class="tcard card card-glow reveal reveal-d2">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-quote">"I commissioned a custom bot through AlphaForge. They delivered in 9 days, exactly to spec. The first week live it returned 8.2%. Blown away."</p>
-          <div class="tc-user"><div class="tc-avatar">SK</div><div><div class="tc-name">Sara K.</div><div class="tc-loc">🇺🇸 New York, USA</div></div></div>
-        </div>
-        <div class="tcard card card-glow reveal reveal-d4">
-          <div class="tc-stars">★★★★☆</div>
-          <p class="tc-quote">"Started on Lite, upgraded to Pro within a month. The Discord community alone is worth the price — proper traders helping each other, not hype merchants."</p>
-          <div class="tc-user"><div class="tc-avatar">DM</div><div><div class="tc-name">Danny M.</div><div class="tc-loc">🇦🇺 Sydney, Australia</div></div></div>
+      <div style="margin-top:24px">
+        <div class="testimonials-carousel-wrapper">
+          <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Running the Pro bot for 6 months now. Up 34% on my $10k account. The wick detection logic is genuinely insane — catches moves I'd miss every time. Couldn't ask for more."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">James R.</div>
+                    <div class="testimonial-role">Prop Trader, 🇬🇧 London</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"I commissioned a custom bot through AlphaForge. They delivered in 9 days, exactly to spec. The first week live it returned 8.2%. Blown away by the quality and support."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Sara K.</div>
+                    <div class="testimonial-role">Funded Trader, 🇺🇸 New York</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★☆</div>
+                <div class="testimonial-text">"Started on Lite, upgraded to Pro within a month. The Discord community alone is worth the price — proper traders helping each other, not hype merchants. Real professional vibes."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Danny M.</div>
+                    <div class="testimonial-role">Full-time Trader, 🇦🇺 Sydney</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Been running Apex for 4 months. The AI entry system cuts out so much noise — I'm averaging 67 pips per week on just 3 currency pairs. This is what institutional trading looks like for retail."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Michael T.</div>
+                    <div class="testimonial-role">Funded Trader, 🇨🇭 Geneva</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Switched back and forth between 3 different EA providers last year. BYB Alpha's backtests are actually honest and the live performance matches. That's rare. Staying put now."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Lisa H.</div>
+                    <div class="testimonial-role">Professional Trader, 🇸🇪 Stockholm</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Commissioned a custom bot for my proprietary strategy. The AlphaForge team understood my exact requirements and delivered code that's genuinely trade-worthy. Worth every penny."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Chris D.</div>
+                    <div class="testimonial-role">Hedge Fund Manager, 🇺🇸 Chicago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★☆</div>
+                <div class="testimonial-text">"The support response time is insane — I had a broker compatibility issue on a Saturday and got help within 30 minutes. That level of care is why I recommend BYB Alpha to everyone."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Alex P.</div>
+                    <div class="testimonial-role">Retail Trader, 🇿🇦 Cape Town</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card card card-glow">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Stopped trading manually 8 months ago. Running the Pro bot on 2 accounts, up 156% combined. The emotion is gone, the discipline is there, the results speak for themselves. Life-changing."</div>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <div class="testimonial-name">Emma W.</div>
+                    <div class="testimonial-role">Funded Trader, 🇳🇱 Amsterdam</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev" onclick="prevTestimonial()">❮</button>
+            <div class="carousel-dots">
+              <div class="dot active" onclick="goToTestimonial(0)"></div>
+              <div class="dot" onclick="goToTestimonial(1)"></div>
+              <div class="dot" onclick="goToTestimonial(2)"></div>
+              <div class="dot" onclick="goToTestimonial(3)"></div>
+              <div class="dot" onclick="goToTestimonial(4)"></div>
+              <div class="dot" onclick="goToTestimonial(5)"></div>
+              <div class="dot" onclick="goToTestimonial(6)"></div>
+              <div class="dot" onclick="goToTestimonial(7)"></div>
+            </div>
+            <button class="carousel-btn next" onclick="nextTestimonial()">❯</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1261,7 +2023,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div class="reveal">
         <div class="eyebrow" style="justify-content:center">START TODAY</div>
         <h2>READY TO <span class="teal">AUTOMATE</span>?</h2>
-        <p>Join 4,218 traders already running BYB FORGE bots. Deploy today, profit tonight.</p>
+        <p>Join 4,218 traders already running BYB Alpha bots. Deploy today, profit tonight.</p>
         <div class="cta-btns">
           <button class="btn btn-primary btn-lg" onclick="showPage('contact')">🚀 Get Your Bot Now</button>
           <button class="btn btn-ghost btn-lg" onclick="toggleChatPopup()">💬 Chat with Forge AI</button>
@@ -1426,15 +2188,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div class="section-header reveal">
         <div class="eyebrow">COMPATIBILITY</div>
         <div class="section-title">SUPPORTED <span class="teal">PLATFORMS</span></div>
-        <p class="section-sub">BYB FORGE bots run on every major trading platform used by retail and professional traders worldwide.</p>
+        <p class="section-sub">BYB Alpha bots run on every major trading platform used by retail and professional traders worldwide.</p>
       </div>
       <div class="platforms-grid">
-        <div class="platform-card card card-glow reveal"><div class="plat-logo">📊</div><div class="plat-name">MetaTrader 4</div><div class="plat-ver">MT4 · FULL SUPPORT</div><div class="plat-desc">The world's most popular retail platform. All BYB FORGE EAs are MT4-compatible out of the box. Works with 95%+ of brokers globally.</div><div class="plat-features"><div class="plat-feat">All bot tiers (Lite, Pro, Apex)</div><div class="plat-feat">One-click .ex4 installation</div><div class="plat-feat">Full strategy tester compatibility</div><div class="plat-feat">Works with VPS hosting</div><div class="plat-feat">Telegram alert integration</div></div></div>
+        <div class="platform-card card card-glow reveal"><div class="plat-logo">📊</div><div class="plat-name">MetaTrader 4</div><div class="plat-ver">MT4 · FULL SUPPORT</div><div class="plat-desc">The world's most popular retail platform. All BYB Alpha EAs are MT4-compatible out of the box. Works with 95%+ of brokers globally.</div><div class="plat-features"><div class="plat-feat">All bot tiers (Lite, Pro, Apex)</div><div class="plat-feat">One-click .ex4 installation</div><div class="plat-feat">Full strategy tester compatibility</div><div class="plat-feat">Works with VPS hosting</div><div class="plat-feat">Telegram alert integration</div></div></div>
         <div class="platform-card card card-glow reveal reveal-d1"><div class="plat-logo">📈</div><div class="plat-name">MetaTrader 5</div><div class="plat-ver">MT5 · FULL SUPPORT</div><div class="plat-desc">Next-gen platform with superior backtesting and multi-asset support. Recommended for serious traders running Pro and Apex bots.</div><div class="plat-features"><div class="plat-feat">Native MT5 .ex5 format</div><div class="plat-feat">Multi-asset (FX, indices, crypto)</div><div class="plat-feat">Tick-by-tick backtesting</div><div class="plat-feat">Economic calendar filter</div><div class="plat-feat">Hedging &amp; netting modes</div></div></div>
-        <div class="platform-card card card-glow reveal reveal-d2"><div class="plat-logo">🖥</div><div class="plat-name">cTrader</div><div class="plat-ver">cBOTS · PRO &amp; APEX ONLY</div><div class="plat-desc">Favoured by ECN traders for deep liquidity and transparent pricing. BYB FORGE offers dedicated cBot implementations for Pro and Apex.</div><div class="plat-features"><div class="plat-feat">Native C# cBot architecture</div><div class="plat-feat">Level 2 order book access</div><div class="plat-feat">Direct broker connectivity</div><div class="plat-feat">Cloud deployment option</div></div></div>
+        <div class="platform-card card card-glow reveal reveal-d2"><div class="plat-logo">🖥</div><div class="plat-name">cTrader</div><div class="plat-ver">cBOTS · PRO &amp; APEX ONLY</div><div class="plat-desc">Favoured by ECN traders for deep liquidity and transparent pricing. BYB Alpha offers dedicated cBot implementations for Pro and Apex.</div><div class="plat-features"><div class="plat-feat">Native C# cBot architecture</div><div class="plat-feat">Level 2 order book access</div><div class="plat-feat">Direct broker connectivity</div><div class="plat-feat">Cloud deployment option</div></div></div>
         <div class="platform-card card card-glow reveal reveal-d3"><div class="plat-logo">📉</div><div class="plat-name">TradingView</div><div class="plat-ver">PINE SCRIPT · SIGNALS</div><div class="plat-desc">Signal integration via Pine Script. Receive trade signals directly on TradingView and automate via broker webhooks.</div><div class="plat-features"><div class="plat-feat">Custom Pine Script indicators</div><div class="plat-feat">Webhook alert integration</div><div class="plat-feat">Compatible with 3Commas, Alertatron</div><div class="plat-feat">Works with any TV broker</div></div></div>
-        <div class="platform-card card card-glow reveal reveal-d4"><div class="plat-logo">⚙️</div><div class="plat-name">NinjaTrader</div><div class="plat-ver">NT8 · APEX ONLY</div><div class="plat-desc">For futures and US-market traders. BYB FORGE Apex includes a dedicated NT8 strategy with full DOM and market depth integration.</div><div class="plat-features"><div class="plat-feat">NT8 NinjaScript (.cs) format</div><div class="plat-feat">Futures &amp; forex pairs</div><div class="plat-feat">DOM integration</div><div class="plat-feat">ATM strategy support</div></div></div>
-        <div class="platform-card card card-glow reveal reveal-d5"><div class="plat-logo">☁️</div><div class="plat-name">Cloud VPS</div><div class="plat-ver">24/7 ALWAYS-ON</div><div class="plat-desc">Run all bots on a dedicated VPS for uninterrupted 24/5 operation. BYB FORGE bots are pre-optimised for low-latency VPS environments.</div><div class="plat-features"><div class="plat-feat">Compatible with Forex VPS, BeeksFX</div><div class="plat-feat">AWS &amp; Azure deployment guides</div><div class="plat-feat">Full setup documentation</div><div class="plat-feat">Remote monitoring dashboard</div></div></div>
+        <div class="platform-card card card-glow reveal reveal-d4"><div class="plat-logo">⚙️</div><div class="plat-name">NinjaTrader</div><div class="plat-ver">NT8 · APEX ONLY</div><div class="plat-desc">For futures and US-market traders. BYB Alpha Apex includes a dedicated NT8 strategy with full DOM and market depth integration.</div><div class="plat-features"><div class="plat-feat">NT8 NinjaScript (.cs) format</div><div class="plat-feat">Futures &amp; forex pairs</div><div class="plat-feat">DOM integration</div><div class="plat-feat">ATM strategy support</div></div></div>
+        <div class="platform-card card card-glow reveal reveal-d5"><div class="plat-logo">☁️</div><div class="plat-name">Cloud VPS</div><div class="plat-ver">24/7 ALWAYS-ON</div><div class="plat-desc">Run all bots on a dedicated VPS for uninterrupted 24/5 operation. BYB Alpha bots are pre-optimised for low-latency VPS environments.</div><div class="plat-features"><div class="plat-feat">Compatible with Forex VPS, BeeksFX</div><div class="plat-feat">AWS &amp; Azure deployment guides</div><div class="plat-feat">Full setup documentation</div><div class="plat-feat">Remote monitoring dashboard</div></div></div>
       </div>
       <div class="section-header reveal" style="margin-top:64px">
         <div class="eyebrow">COMPATIBILITY MATRIX</div>
@@ -1466,7 +2228,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div class="section-header reveal">
         <div class="eyebrow">GLOBAL AVAILABILITY</div>
         <div class="section-title">SUPPORTED <span class="teal">COUNTRIES</span></div>
-        <p class="section-sub">BYB FORGE is available in 100+ countries. Some regions have restrictions due to local regulations.</p>
+        <p class="section-sub">BYB Alpha is available in 100+ countries. Some regions have restrictions due to local regulations.</p>
       </div>
       <div class="countries-stats-bar reveal">
         <div class="csb-item"><div class="csb-val" style="color:var(--bull)">37</div><div class="csb-lbl">FULLY AVAILABLE</div></div>
@@ -1494,7 +2256,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div style="font-size:22px;flex-shrink:0">⚠️</div>
           <div>
             <div style="font-size:14px;font-weight:600;color:var(--yellow);margin-bottom:6px">Important Disclaimer</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.75">Trading with automated bots may be subject to regulation in your jurisdiction. BYB FORGE does not provide financial advice. Always ensure you comply with local financial regulations, tax obligations, and broker terms of service. Residents of the United States, Iran, North Korea, Cuba, and Syria are currently unable to access BYB FORGE products due to regulatory restrictions.</div>
+            <div style="font-size:13px;color:var(--text2);line-height:1.75">Trading with automated bots may be subject to regulation in your jurisdiction. BYB Alpha does not provide financial advice. Always ensure you comply with local financial regulations, tax obligations, and broker terms of service. Residents of the United States, Iran, North Korea, Cuba, and Syria are currently unable to access BYB Alpha products due to regulatory restrictions.</div>
           </div>
         </div>
       </div>
@@ -1513,7 +2275,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       </div>
       <div class="mission-strip reveal" style="margin-top:56px">
         <div class="mission-item"><div class="mission-icon">🎯</div><div class="mission-title">Our Mission</div><div class="mission-text">To democratise algorithmic trading — giving every serious trader access to the same systematic edge that institutional desks have held for decades.</div></div>
-        <div class="mission-item"><div class="mission-icon">🔭</div><div class="mission-title">Our Vision</div><div class="mission-text">A world where no profitable trading strategy dies with its creator. BYB FORGE exists to preserve, codify, and deploy human trading intuition at machine speed.</div></div>
+        <div class="mission-item"><div class="mission-icon">🔭</div><div class="mission-title">Our Vision</div><div class="mission-text">A world where no profitable trading strategy dies with its creator. BYB Alpha exists to preserve, codify, and deploy human trading intuition at machine speed.</div></div>
         <div class="mission-item"><div class="mission-icon">🤝</div><div class="mission-title">Our Promise</div><div class="mission-text">Radical transparency. Verified track records only. No curve-fitted backtests, no fake screenshots, no unrealistic promises. Just honest, consistent performance data.</div></div>
       </div>
     </div>
@@ -1542,7 +2304,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
         <div class="team-card card card-glow reveal"><div class="team-avatar">AK</div><div class="team-name">Alex Kane</div><div class="team-role">FOUNDER &amp; HEAD OF STRATEGY</div><div class="team-bio">Former institutional FX trader with 11 years at tier-1 banks. Built the Unwicked EA strategy from scratch over 4 years of live market testing.</div></div>
         <div class="team-card card card-glow reveal reveal-d2"><div class="team-avatar">JS</div><div class="team-name">Jamie Soto</div><div class="team-role">LEAD DEVELOPER</div><div class="team-bio">MQL5 specialist and computer scientist. Responsible for all core bot architecture, execution engine, and platform integrations.</div></div>
         <div class="team-card card card-glow reveal reveal-d3"><div class="team-avatar">PC</div><div class="team-name">Priya Chen</div><div class="team-role">QUANTITATIVE ANALYST</div><div class="team-bio">MSc in Financial Mathematics. Leads all backtesting, risk modelling, and statistical validation of every strategy before it goes live.</div></div>
-        <div class="team-card card card-glow reveal reveal-d4"><div class="team-avatar">MR</div><div class="team-name">Marcus Reid</div><div class="team-role">HEAD OF COMMUNITY</div><div class="team-bio">Retail trader turned community builder. Runs the BYB FORGE Discord, creates all educational content, and ensures every user gets the support they need.</div></div>
+        <div class="team-card card card-glow reveal reveal-d4"><div class="team-avatar">MR</div><div class="team-name">Marcus Reid</div><div class="team-role">HEAD OF COMMUNITY</div><div class="team-bio">Retail trader turned community builder. Runs the BYB Alpha Discord, creates all educational content, and ensures every user gets the support they need.</div></div>
       </div>
     </div>
   </section>
@@ -1570,7 +2332,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
           <div class="timeline reveal">
             <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021</div><div class="tl-evt">The Idea</div><div class="tl-desc">Alex Kane, after a decade trading FX institutionally, decides to codify his wick rejection strategy into an EA for personal use.</div></div>
             <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022</div><div class="tl-evt">First Live Test</div><div class="tl-desc">Unwicked EA v1.0 goes live on a $5,000 account. Returns 31.2% after 6 months with max drawdown of 3.1%.</div></div>
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023</div><div class="tl-evt">BYB FORGE Launches</div><div class="tl-desc">Goes public with Lite and Pro tiers. 500 users in the first month. AlphaForge custom development service launched.</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023</div><div class="tl-evt">BYB Alpha Launches</div><div class="tl-desc">Goes public with Lite and Pro tiers. 500 users in the first month. AlphaForge custom development service launched.</div></div>
             <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-evt">Forge Apex Released</div><div class="tl-desc">AI-assisted entry engine integrated. Community grows to 4,218 traders across 47 countries. $2.8M in profit generated.</div></div>
             <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-evt">What's Next</div><div class="tl-desc">Mobile app in development. Crypto DEX integration planned. DeFi strategy automation expanding. The best is still to come.</div></div>
           </div>
@@ -1587,55 +2349,214 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div class="section-header reveal">
         <div class="eyebrow">HELP CENTRE</div>
         <div class="section-title">FREQUENTLY ASKED<br><span class="teal">QUESTIONS</span></div>
-        <p class="section-sub">Can't find what you need? Jump into our <a href="https://discord.gg/J2tZEaQJM" target="_blank" style="color:var(--blue)">Discord</a> or chat with Forge AI.</p>
+        <p class="section-sub">Can't find what you need? Jump into our <a href="https://discord.gg/J2tZEaQJM" target="_blank" style="color:var(--blue)">Discord</a> or chat with Forge AI below →</p>
       </div>
-      <div class="faq-layout">
-        <div class="faq-sidebar">
-          <input class="faq-search" type="text" placeholder="🔍 Search FAQs..." oninput="searchFaq(this.value)">
-          <button class="faq-category active" onclick="scrollFaqGroup('general',this)">🤖 General</button>
-          <button class="faq-category" onclick="scrollFaqGroup('pricing',this)">💰 Pricing</button>
-          <button class="faq-category" onclick="scrollFaqGroup('setup',this)">⚙️ Setup</button>
-          <button class="faq-category" onclick="scrollFaqGroup('performance',this)">📊 Performance</button>
-          <button class="faq-category" onclick="scrollFaqGroup('security',this)">🔒 Security</button>
-          <button class="faq-category" onclick="scrollFaqGroup('custom',this)">⚒ Custom Bots</button>
+      <div style="max-width:900px;margin:0 auto">
+        <div class="reveal">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">GENERAL</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">What is BYB Alpha?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">BYB Alpha is an algorithmic trading platform providing ready-made Expert Advisor (EA) bots for MetaTrader 4/5, cTrader, and other platforms. We also offer custom bot development through AlphaForge, where our developers code your exact trading strategy from scratch.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Do I need coding experience to use the bots?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">No coding knowledge is required. Our bots come with step-by-step video and written installation guides. If you can navigate MetaTrader, you can run a BYB Alpha bot. Our support community is always available to help.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">What trading pairs does the bot work on?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Unwicked Lite covers EUR/USD and GBP/USD. Unwicked Pro expands to 12+ forex pairs plus gold. Forge Apex covers all major forex pairs, gold (XAUUSD), indices (NAS100, US30), and crypto. Custom AlphaForge bots can target any market your broker offers.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d3" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Is algorithmic trading legal?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Yes, algorithmic trading is legal in most jurisdictions. However, regulations vary by country and broker. Always verify that your broker permits automated trading (EAs) and that you comply with local financial regulations. We cannot provide legal advice.</div>
+            </div>
+          </div>
         </div>
-        <div class="faq-content" id="faqContent">
-          <div class="faq-group" id="faq-general">
-            <div class="faq-group-title">GENERAL</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is BYB FORGE?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">BYB FORGE is an algorithmic trading platform providing ready-made Expert Advisor (EA) bots for MetaTrader 4/5, cTrader, and other platforms. We also offer a custom bot development service called AlphaForge, where our developers code your exact trading strategy from scratch.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need coding experience to use the bots?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">No coding knowledge is required. Our bots come with step-by-step video and written installation guides. If you can navigate MetaTrader, you can run a BYB FORGE bot. Our support community is always available to help.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What trading pairs does the bot work on?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Unwicked Lite covers EUR/USD and GBP/USD. Unwicked EA Pro expands to 12+ forex pairs. Forge Apex covers all major forex pairs, gold (XAUUSD), indices (NAS100, US30), and cryptocurrency pairs. Custom AlphaForge bots can target any market your broker offers.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is algorithmic trading legal?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Yes, algorithmic trading is legal in most jurisdictions. However, regulations vary by country and broker. Always verify that your broker permits automated trading (EAs) and that you are compliant with local financial regulations. We cannot provide legal or financial advice.</div></div></div>
+
+        <div class="reveal" style="margin-top:32px">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">PRICING & LICENSING</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Are there any recurring fees?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">No. All bot purchases are one-time payments. You own the software outright. No monthly subscriptions, no hidden fees, no profit-sharing. Future updates for Pro and Apex tiers are included at no extra charge.</div>
+            </div>
           </div>
-          <div class="faq-group" id="faq-pricing">
-            <div class="faq-group-title">PRICING</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are there any recurring fees?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">No. All bot purchases are one-time payments. You own the software outright. No monthly subscriptions, no hidden fees, no profit-sharing. Future updates for Pro and Apex tiers are included at no extra charge.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer a money-back guarantee?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Yes. All bot products come with a 30-day no-questions-asked money-back guarantee. If you are not satisfied for any reason within 30 days of purchase, contact our support team and we will process your full refund.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How many accounts can I run the bot on?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Lite licences cover 1 live account. Pro licences cover up to 3 live accounts. Apex licences cover unlimited live accounts. AlphaForge custom bots are licensed on a per-project basis.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">We accept all major debit/credit cards (Visa, Mastercard, Amex), PayPal, cryptocurrency (BTC, ETH, USDT), and bank transfer. All payments are processed securely via SSL-encrypted connections.</div></div></div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Do you offer a money-back guarantee?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Yes. All bot products come with a 30-day no-questions-asked money-back guarantee. If you're not satisfied within 30 days of purchase, contact our support team and we'll process your full refund immediately.</div>
+            </div>
           </div>
-          <div class="faq-group" id="faq-setup">
-            <div class="faq-group-title">SETUP & INSTALLATION</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does it take to set up?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Most users are up and running within 15–30 minutes. After purchase, you receive an instant download link plus access to full setup documentation, video walkthroughs, and the Discord community.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to keep my computer on 24/7?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">We strongly recommend a VPS for 24/5 uninterrupted operation. Full documentation is provided for setting up BYB FORGE bots on BeeksFX, Forex VPS, AWS, and Azure.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which brokers are compatible?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">BYB FORGE bots are broker-agnostic and work with any broker supporting MetaTrader 4/5 or cTrader. We recommend ECN/STP brokers with tight spreads. A recommended broker list is in our Discord documentation channel.</div></div></div>
+
+          <div class="faq-item reveal reveal-d2" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">How many accounts can I run the bot on?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Lite licences cover 1 live account. Pro licences cover up to 3 live accounts. Apex licences cover unlimited live accounts. AlphaForge custom bots are licensed per project.</div>
+            </div>
           </div>
-          <div class="faq-group" id="faq-performance">
-            <div class="faq-group-title">PERFORMANCE & RESULTS</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the performance results real?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Yes. All performance data is sourced from live trading accounts independently verified on Myfxbook — the industry standard for third-party trade verification. We do not use backtested results in our marketing.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is past performance guaranteed in the future?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">No. As with all trading, past performance is not a guarantee of future results. Markets change, and any trading system can experience losing periods. Only trade with capital you can afford to lose.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the minimum account size recommended?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">We recommend a minimum of $500 for Lite, $1,000 for Pro, and $2,500 for Apex to allow for proper risk management and position sizing.</div></div></div>
+
+          <div class="faq-item reveal reveal-d3" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">What payment methods do you accept?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">We accept all major debit/credit cards (Visa, Mastercard, Amex), PayPal, cryptocurrency (BTC, ETH, USDT), and bank transfer. All payments are processed securely via SSL encryption.</div>
+            </div>
           </div>
-          <div class="faq-group" id="faq-security">
-            <div class="faq-group-title">SECURITY</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does the bot need access to my funds?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">BYB FORGE bots run locally on your machine or VPS within MetaTrader or cTrader. We never have access to your broker account, passwords, or funds. The bot operates through the platform's API — same as your manual trades.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is my personal data safe?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Yes. We collect only the information necessary to process your order. We never sell or share your data with third parties. All data is stored encrypted and handled in accordance with GDPR and applicable data protection regulations.</div></div></div>
+        </div>
+
+        <div class="reveal" style="margin-top:32px">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">SETUP & INSTALLATION</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">How long does it take to set up?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Most users are up and running within 15–30 minutes. After purchase, you receive an instant download link plus access to full setup documentation, video walkthroughs, and our Discord community.</div>
+            </div>
           </div>
-          <div class="faq-group" id="faq-custom">
-            <div class="faq-group-title">CUSTOM BOT DEVELOPMENT</div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does AlphaForge work?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Submit a brief describing your strategy, entry/exit rules, risk parameters, and requirements. We respond with a full quote within 24 hours, agree on scope, then build and deliver — typically within 7–21 days depending on complexity.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who owns the source code of a custom bot?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">You do. Upon final payment, full IP and source code ownership transfers to you. We do not retain any rights to resell or reuse your custom strategy. NDAs available on request.</div></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I'm not happy with the custom bot?<span class="faq-chevron">▼</span></button><div class="faq-a"><div class="faq-a-inner">Every AlphaForge project includes 3 free revision rounds. If the bot doesn't meet the agreed specification after revisions, we provide a full refund of the 50% deposit. We don't charge the remaining 50% until you're satisfied.</div></div></div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Do I need to keep my computer on 24/7?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">We strongly recommend a VPS for 24/5 uninterrupted operation. Full documentation is provided for setting up on BeeksFX, Forex VPS, AWS, and Azure. Most professional traders use a VPS.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Which brokers are compatible?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">BYB Alpha bots work with any broker supporting MetaTrader 4/5 or cTrader. We recommend ECN/STP brokers with tight spreads. A recommended broker list is in our Discord documentation channel.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:32px">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">PERFORMANCE & RESULTS</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Are the performance results real?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Yes. All performance data is sourced from live trading accounts independently verified on Myfxbook — the industry standard for third-party trade verification. We never use curve-fitted backtests in our marketing.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Is past performance guaranteed in the future?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">No. As with all trading, past performance is not a guarantee of future results. Markets change, and any trading system can experience losing periods. Only trade with capital you can afford to lose.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">What is the minimum account size recommended?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">We recommend a minimum of $500 for Lite, $1,000 for Pro, and $2,500 for Apex to allow for proper risk management and position sizing. Smaller accounts will have smaller position sizes.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:32px">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">SECURITY & PRIVACY</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Does the bot need access to my funds?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">BYB Alpha bots run locally on your machine or VPS within MetaTrader or cTrader. We never have access to your broker account, passwords, or funds. The bot operates through the platform's API — same as your manual trades.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Is my personal data safe?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Yes. We collect only information necessary to process your order. We never sell or share your data with third parties. All data is encrypted and handled in accordance with GDPR and applicable data protection regulations.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:32px">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--white)">CUSTOM BOT DEVELOPMENT (AlphaForge)</h3>
+          <div class="faq-item reveal" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">How does AlphaForge work?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Submit a brief describing your strategy, entry/exit rules, risk parameters, and requirements. We respond with a full quote within 24 hours, agree on scope, then build and deliver — typically within 7–21 days depending on complexity.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">Who owns the source code of a custom bot?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">You do. Upon final payment, full IP and source code ownership transfers to you. We do not retain any rights to resell or reuse your custom strategy. NDAs available on request.</div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2" onclick="toggleFaqItem(this)">
+            <div class="faq-header">
+              <div class="faq-question">What if I'm not happy with the custom bot?</div>
+              <div class="faq-toggle">▼</div>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">Every AlphaForge project includes 3 free revision rounds. If the bot doesn't meet the agreed specification after revisions, we provide a full refund of the 50% deposit. We don't charge the remaining 50% until you're satisfied.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1650,7 +2571,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       <div class="ai-hero reveal">
         <div class="ai-badge">🤖 AI-POWERED SUPPORT</div>
         <div class="section-title" style="margin-bottom:12px">FORGE <span class="blue">AI</span> ASSISTANT</div>
-        <p style="font-size:15px;color:var(--text2);max-width:520px;margin:0 auto 36px;line-height:1.75">Instant answers to any BYB FORGE question — setup, strategy, performance, troubleshooting. Available 24/7.</p>
+        <p style="font-size:15px;color:var(--text2);max-width:520px;margin:0 auto 36px;line-height:1.75">Instant answers to any BYB Alpha question — setup, strategy, performance, troubleshooting. Available 24/7.</p>
         <div class="chatbot-window">
           <div class="chat-titlebar">
             <div class="chat-dots"><div class="chat-dot red"></div><div class="chat-dot yellow"></div><div class="chat-dot green"></div></div>
@@ -1658,7 +2579,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             <div class="chat-status"><span style="width:6px;height:6px;border-radius:50%;background:var(--bull);display:inline-block;animation:pulse 2s infinite"></span> Online</div>
           </div>
           <div class="chat-messages" id="chatMessages">
-            <div class="msg"><div class="msg-avatar bot">AI</div><div class="msg-bubble">Hi! 👋 I'm Forge AI. Ask me anything about BYB FORGE — setup, strategy, performance, or AlphaForge briefs. What would you like to know?</div></div>
+            <div class="msg"><div class="msg-avatar bot">AI</div><div class="msg-bubble">Hi! 👋 I'm Forge AI. Ask me anything about BYB Alpha — setup, strategy, performance, or AlphaForge briefs. What would you like to know?</div></div>
             <div class="msg"><div class="msg-avatar bot">AI</div><div class="msg-bubble">Try asking:<br>• "How do I install the Pro bot on MT4?"<br>• "What's the difference between Pro and Apex?"<br>• "How does AlphaForge pricing work?"<br>• "What's your win rate on XAUUSD?"</div></div>
           </div>
           <div class="chat-input-row">
@@ -1669,14 +2590,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
       </div>
       <div class="ai-features-grid">
         <div class="ai-feat card card-glow reveal"><div class="ai-feat-icon">⚡</div><div class="ai-feat-title">Instant Responses</div><div class="ai-feat-text">No support tickets, no waiting. Get answers in seconds, 24/7.</div></div>
-        <div class="ai-feat card card-glow reveal reveal-d2"><div class="ai-feat-icon">🧠</div><div class="ai-feat-title">Trained on Our Docs</div><div class="ai-feat-text">Forge AI is trained on all BYB FORGE documentation, strategy guides, and setup tutorials for accurate answers.</div></div>
+        <div class="ai-feat card card-glow reveal reveal-d2"><div class="ai-feat-icon">🧠</div><div class="ai-feat-title">Trained on Our Docs</div><div class="ai-feat-text">Forge AI is trained on all BYB Alpha documentation, strategy guides, and setup tutorials for accurate answers.</div></div>
         <div class="ai-feat card card-glow reveal reveal-d4"><div class="ai-feat-icon">🔗</div><div class="ai-feat-title">Escalates to Humans</div><div class="ai-feat-text">If Forge AI can't resolve your issue, it seamlessly escalates to our human support team or routes you to Discord.</div></div>
       </div>
       <div class="discord-card reveal">
         <div style="position:relative;z-index:1">
           <div class="discord-logo">🎮</div>
-          <div class="discord-h3">Join the BYB FORGE Discord</div>
-          <div class="discord-p">4,218+ active traders sharing signals, strategies, and support. The fastest way to get help from people actually running BYB FORGE bots live.</div>
+          <div class="discord-h3">Join the BYB Alpha Discord</div>
+          <div class="discord-p">4,218+ active traders sharing signals, strategies, and support. The fastest way to get help from people actually running BYB Alpha bots live.</div>
           <div class="discord-stat">
             <div><div class="ds-val">4,218</div><div class="ds-lbl">MEMBERS</div></div>
             <div><div class="ds-val">312</div><div class="ds-lbl">ONLINE NOW</div></div>
@@ -1697,8 +2618,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
         <div class="contact-info reveal">
           <div class="eyebrow">GET IN TOUCH</div>
           <div class="contact-h2">LET'S<br><span class="teal">TALK</span><br>TRADING.</div>
-          <p class="contact-p">Have a question, want to commission a custom bot, or just want to know if BYB FORGE is right for you? We respond within 24 hours.</p>
-          <div class="contact-detail"><div class="cd-icon">✉️</div><div class="cd-text">support@bybforge.com</div></div>
+          <p class="contact-p">Have a question, want to commission a custom bot, or just want to know if BYB Alpha is right for you? We respond within 24 hours.</p>
+          <div class="contact-detail"><div class="cd-icon">✉️</div><div class="cd-text">support@bybalpha.com</div></div>
           <div class="contact-detail"><div class="cd-icon">💬</div><div class="cd-text">Discord: discord.gg/J2tZEaQJM</div></div>
           <div class="contact-detail"><div class="cd-icon">📍</div><div class="cd-text">London, United Kingdom 🇬🇧</div></div>
           <div class="contact-detail"><div class="cd-icon">🕐</div><div class="cd-text">Response time: Within 24 hours</div></div>
@@ -1718,30 +2639,123 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             </div>
           </div>
         </div>
-        <div class="contact-form-card card reveal reveal-d2">
-          <div style="margin-bottom:22px">
-            <div class="eyebrow">SEND A MESSAGE</div>
-            <div style="font-size:20px;font-weight:600;color:var(--white)">How can we help?</div>
+        <div class="checkout-wrapper reveal reveal-d2">
+          <div class="product-selector" id="productSelector">
+            <button class="product-btn active" onclick="selectProduct('lite')" data-price="79" data-name="Unwicked Lite">
+              <span class="product-name">Lite</span>
+              <span class="product-price">£79</span>
+            </button>
+            <button class="product-btn" onclick="selectProduct('pro')" data-price="149" data-name="Unwicked Pro">
+              <span class="product-name">Pro ⚡</span>
+              <span class="product-price">£149</span>
+            </button>
+            <button class="product-btn" onclick="selectProduct('apex')" data-price="299" data-name="Forge Apex">
+              <span class="product-name">Apex 🏆</span>
+              <span class="product-price">£299</span>
+            </button>
           </div>
-          <div class="form-row">
-            <div class="form-field"><label class="form-label">FIRST NAME</label><input class="form-input" type="text" placeholder="John" id="cf-fname"></div>
-            <div class="form-field"><label class="form-label">LAST NAME</label><input class="form-input" type="text" placeholder="Smith" id="cf-lname"></div>
+          
+          <div class="payment-card-section">
+            <div class="payment-card" id="paymentCard">
+              <div class="card-front">
+                <div class="card-top">
+                  <div class="card-logo">VISA</div>
+                  <div class="card-chip"></div>
+                </div>
+                <div class="card-number-display" id="cardNumberDisplay">•••• •••• •••• 4242</div>
+                <div class="card-row">
+                  <div class="card-info">
+                    <div class="card-label">Card Holder</div>
+                    <div class="card-name" id="cardNameDisplay">YOUR NAME</div>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-label">Expires</div>
+                    <div class="card-date" id="cardDateDisplay">12/28</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-stripe" style="width:100%;height:60px;background:linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.6) 50%,rgba(0,0,0,.5) 100%);border-radius:4px;box-shadow:inset 0 2px 4px rgba(0,0,0,.5)"></div>
+                <div class="card-back-inner">
+                  <div class="card-back-cvv-box">
+                    <div class="card-back-cvv-label">CVC</div>
+                    <div class="card-back-cvv-show" id="cardCVVFull">•••</div>
+                  </div>
+                  <div class="card-back-text">This card is for demonstration only. No real charges will be made.</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-field"><label class="form-label">EMAIL ADDRESS</label><input class="form-input" type="email" placeholder="john@example.com" id="cf-email"></div>
-          <div class="form-field"><label class="form-label">ENQUIRY TYPE</label>
-            <select class="form-select form-input" id="cf-type">
-              <option value="">Select a topic...</option>
-              <option>General Question</option>
-              <option>AlphaForge — Custom Bot</option>
-              <option>Technical Support</option>
-              <option>Billing &amp; Refunds</option>
-              <option>Partnership Enquiry</option>
-              <option>Press &amp; Media</option>
-            </select>
+
+          <div class="payment-form">
+            <div class="form-section">
+              <div class="form-section-title">Select Plan</div>
+              <div class="amount-summary">
+                <div class="summary-row">
+                  <span id="planNameSummary">Unwicked Lite</span>
+                  <span id="planPriceSummary">£79.00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Lifetime Access</span>
+                  <span style="color:var(--teal)">✓</span>
+                </div>
+                <div class="summary-row">
+                  <span>30-Day Guarantee</span>
+                  <span style="color:var(--teal)">✓</span>
+                </div>
+                <div class="summary-row total">
+                  <span>Total Due</span>
+                  <span id="totalAmount">£79.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-title">Card Details</div>
+              <div class="form-row form-row.full">
+                <div class="form-input-group">
+                  <label class="form-label">Cardholder Name</label>
+                  <input class="form-input" type="text" placeholder="John Smith" id="cardName" oninput="updateCardDisplay()">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-input-group">
+                  <label class="form-label">Card Number</label>
+                  <input class="form-input" type="text" placeholder="4242 4242 4242 4242" id="cardNumber" maxlength="19" oninput="formatCardNumber(this); updateCardDisplay()" onkeydown="cardNumberKeydown(event)">
+                </div>
+                <div class="form-input-group">
+                  <label class="form-label">CVV</label>
+                  <input class="form-input" type="text" placeholder="123" id="cardCVV" maxlength="4" inputmode="numeric" oninput="updateCardDisplay()" onfocus="flipCard()">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-input-group">
+                  <label class="form-label">Expiry Date</label>
+                  <input class="form-input" type="text" placeholder="MM/YY" id="cardExpiry" maxlength="5" oninput="formatExpiry(this); updateCardDisplay()">
+                </div>
+                <div class="form-input-group">
+                  <label class="form-label">Billing Country</label>
+                  <select class="form-input" id="country" style="cursor:pointer">
+                    <option>United Kingdom 🇬🇧</option>
+                    <option>United States 🇺🇸</option>
+                    <option>Canada 🇨🇦</option>
+                    <option>Australia 🇦🇺</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="checkout-btn" onclick="processPayment(this)" id="checkoutBtn">
+              <span>💳 Complete Purchase — £79.00</span>
+            </button>
+            
+            <div class="trust-icons">
+              <div class="trust-badge">🔒 SSL Encrypted</div>
+              <div class="trust-badge">✓ 30-Day Refund</div>
+              <div class="trust-badge">⚡ Instant Delivery</div>
+            </div>
           </div>
-          <div class="form-field"><label class="form-label">YOUR MESSAGE</label><textarea class="form-textarea" placeholder="Tell us what you need. The more detail, the faster we can help..." id="cf-msg"></textarea></div>
-          <button class="form-submit" id="formSubmitBtn" onclick="submitContact(this)"><span>Send Message</span><span>→</span></button>
-          <div class="form-footer-note">🔒 Your information is encrypted and never shared. We respond within 24 hours.</div>
         </div>
       </div>
     </div>
@@ -1776,6 +2790,38 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
         <div class="fm-stat"><div class="fm-val" style="color:var(--blue)">847</div><div class="fm-lbl">BOTS LIVE</div></div>
       </div>
 
+      <!-- Trust Badges -->
+      <div class="footer-trust-badges" style="margin:32px 0">
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">✓</div>
+          <div class="trust-badge-text">
+            <div class="trust-badge-value">2,000+</div>
+            <div class="trust-badge-label">Active Users</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">💰</div>
+          <div class="trust-badge-text">
+            <div class="trust-badge-value">£12.5M+</div>
+            <div class="trust-badge-label">Volume Traded</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">⭐</div>
+          <div class="trust-badge-text">
+            <div class="trust-badge-value">4.8/5.0</div>
+            <div class="trust-badge-label">Avg Rating</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🔄</div>
+          <div class="trust-badge-text">
+            <div class="trust-badge-value">30-Day</div>
+            <div class="trust-badge-label">Money-Back</div>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-top">
         <div class="footer-brand">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
@@ -1789,11 +2835,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             <div class="fb-badge"><span>⚡</span> Live Since 2022</div>
           </div>
           <div class="footer-socials">
-            <a href="https://discord.gg/J2tZEaQJM" target="_blank" class="fsoc" title="Discord">💬</a>
-            <a href="#" class="fsoc" title="Telegram">✈️</a>
-            <a href="#" class="fsoc" title="Twitter/X">𝕏</a>
-            <a href="#" class="fsoc" title="YouTube">▶️</a>
-            <a href="#" class="fsoc" title="Instagram">📸</a>
+            <a href="https://discord.gg/J2tZEaQJM" target="_blank" class="fsoc" title="Discord"><svg width="20" height="20" viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A99.9,99.9,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0A105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a77.15,77.15,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.22,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.55h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60.55,31,53.88s5-11.75,11.45-11.75S54,47.16,53.89,53.88,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60.55,73.25,53.88s5-11.75,11.45-11.75S96.23,47.16,96.12,53.88,91.08,65.69,84.69,65.69Z"/></svg></a>
+            <a href="https://t.me/bybalpha" target="_blank" class="fsoc" title="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.332-2.96-.924c-.643-.204-.657-.643.136-.953l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg></a>
+            <a href="https://twitter.com/bybalpha" target="_blank" class="fsoc" title="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+
+            <a href="https://www.instagram.com/bybalpha/" target="_blank" class="fsoc" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.011 4.85.07 1.17.055 1.805.244 2.227.408.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.353 1.057.408 2.227.059 1.266.07 1.646.07 4.85 0 3.204-.011 3.584-.07 4.85-.055 1.17-.244 1.805-.408 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.353-2.227.408-1.266.059-1.646.07-4.85.07-3.204 0-3.584-.011-4.85-.07-1.17-.055-1.805-.244-2.227-.408-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.353-1.057-.408-2.227-.059-1.266-.07-1.646-.07-4.85 0-3.204.011-3.584.07-4.85.055-1.17.244-1.805.408-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.353 2.227-.408 1.266-.059 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.275.058-2.148.247-2.91.525-.788.305-1.459.717-2.126 1.384-.667.667-1.079 1.335-1.384 2.126-.277.761-.467 1.635-.525 2.91C.037 8.333.021 8.741.021 12c0 3.259.014 3.668.072 4.948.058 1.274.247 2.148.525 2.91.305.788.717 1.459 1.384 2.126.667.666 1.335 1.079 2.126 1.384.761.277 1.635.467 2.91.525 1.279.058 1.689.072 4.947.072 3.259 0 3.668-.014 4.948-.072 1.274-.058 2.148-.248 2.91-.525.788-.305 1.459-.718 2.126-1.384.666-.667 1.079-1.338 1.384-2.126.277-.762.467-1.636.525-2.91.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.058-1.275-.248-2.149-.525-2.91-.305-.789-.718-1.460-1.384-2.127-.667-.666-1.338-1.079-2.126-1.384-.761-.278-1.636-.467-2.91-.525C15.667.035 15.259.021 12.001.021Z"/><circle cx="12" cy="12" r="3.6"/><circle cx="18.406" cy="5.595" r=".894"/></svg></a>
+            <a href="https://www.tiktok.com/@byb.alpha" target="_blank" class="fsoc" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.971-1.166-1.956-1.281-2.658h.004C16.368 1.241 16.419 1 16.419 1h-3.912v14.049c0 .185 0 .368-.008.549-.008.186-.022.364-.046.534v.013c-.08.57-.284 1.106-.598 1.57a3.194 3.194 0 0 1-2.693 1.384c-1.76 0-3.19-1.432-3.19-3.197 0-1.765 1.43-3.197 3.19-3.197.334 0 .655.053.957.149l.005-3.978a7.115 7.115 0 0 0-4.918 1.373 7.304 7.304 0 0 0-1.594 1.76c-.157.254-.748 1.354-.82 3.112-.045 1.004.258 2.047.401 2.478v.009c.09.254.493 1.246 1.144 2.083A7.505 7.505 0 0 0 6.07 22v-.009l.009.009c1.021.693 2.176 1.068 3.368 1.068c3.565 0 6.553-2.95 6.553-6.576V8.578a9.292 9.292 0 0 0 5.428 1.735V6.422a5.17 5.17 0 0 1-2.107-.86z"/></svg></a>
           </div>
         </div>
 
@@ -1843,7 +2890,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
 
       <div class="footer-bottom">
         <div class="footer-bottom-left">
-          <div class="footer-copy">© 2025 <span>BYB FORGE</span>. All rights reserved.</div>
+          <div class="footer-copy">© 2025 <span>BYB Alpha</span>. All rights reserved.</div>
           <div class="footer-legal-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
@@ -1851,7 +2898,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border)}
             <a href="#">Cookie Policy</a>
           </div>
         </div>
-        <div class="footer-risk">⚠️ Trading involves substantial risk of loss. Past performance is not indicative of future results. Only trade with capital you can afford to lose. BYB FORGE does not provide financial advice.</div>
+        <div class="footer-risk">⚠️ Trading involves substantial risk of loss. Past performance is not indicative of future results. Only trade with capital you can afford to lose. BYB Alpha does not provide financial advice.</div>
       </div>
     </div>
   </div>
@@ -2220,12 +3267,12 @@ const popupReplies = {
   'bots': "We offer three tiers:\n\n• **Unwicked Lite** (£79) — EUR/USD & GBP/USD, MT4/MT5, 84.2% win rate\n• **Unwicked EA Pro** (£149) — 12+ pairs, Telegram alerts, 89.4% win rate ⚡\n• **Forge Apex** (£299) — All markets, AI entries, 92.1% win rate 🏆\n\nAll are one-time payments. No subscriptions ever.",
   'started': "Getting started is easy:\n\n1. Choose your bot (Lite, Pro, or Apex)\n2. Complete checkout — instant download\n3. Install on MT4/MT5 using our video guide (15 mins)\n4. Set your risk parameters\n5. Hit start! 🚀\n\nNeed help? Our Discord has 4,218 traders ready to assist.",
   'win rate': "Our live verified win rates on Myfxbook:\n• Unwicked Lite: **84.2%**\n• Unwicked EA Pro: **89.4%**\n• Forge Apex: **92.1%**\n\nThese are from real live accounts, not backtests.",
-  'guarantee': "Yes! All bot purchases include a **30-day no-questions-asked money-back guarantee**. Just email support@bybforge.com and we'll refund you in full — no questions, no hassle. 🔒",
+  'guarantee': "Yes! All bot purchases include a **30-day no-questions-asked money-back guarantee**. Just email support@bybalpha.com and we'll refund you in full — no questions, no hassle. 🔒",
   'price': "One-time prices, no subscriptions:\n• **Lite**: £79 — 1 account, EUR/USD, GBP/USD\n• **Pro**: £149 — 3 accounts, 12+ pairs ⭐\n• **Apex**: £299 — Unlimited accounts, all markets\n\nAll include free strategy updates!",
   'install': "MT4 installation takes about 15 minutes:\n\n1. Open MT4 → File → Open Data Folder\n2. Navigate to MQL4 → Experts\n3. Paste your .ex4 file there\n4. Restart MT4\n5. Drag the EA onto your chart\n\nFull video guide is in your confirmation email! 📹",
   'custom': "AlphaForge is our custom bot development service. Submit a brief with your strategy details, and we'll reply with a quote within 24 hours. Starting from £299. You own the full source code. Head to the Contact page to get started!",
   'xauusd': "Gold (XAUUSD) is one of our strongest performers! Available on **Pro and Apex** tiers. The wick rejection strategy is particularly powerful on gold's intraday moves. Apex averages +46 pip moves on XAUUSD using the AI entry engine. 🥇",
-  'default': "Great question! For a detailed answer, try our <a href='#' onclick='showPage(\"faq\");closeChatPopup();return false;' style='color:var(--teal)'>FAQ page</a> or jump into our <a href='https://discord.gg/J2tZEaQJM' target='_blank' style='color:var(--blue)'>Discord</a> where 4,218+ traders can help. You can also email support@bybforge.com. Anything else I can help with? 🤖"
+  'default': "Great question! For a detailed answer, try our <a href='#' onclick='showPage(\"faq\");closeChatPopup();return false;' style='color:var(--teal)'>FAQ page</a> or jump into our <a href='https://discord.gg/J2tZEaQJM' target='_blank' style='color:var(--blue)'>Discord</a> where 4,218+ traders can help. You can also email support@bybalpha.com. Anything else I can help with? 🤖"
 };
 
 function sendPopupChat() {
@@ -2291,9 +3338,9 @@ const aiReplies = {
   'alphaforge': "AlphaForge is our custom bot development service! Describe your strategy, get a quote within 24h, full source code ownership, 3 free revision rounds. Contact us to get started!",
   'win rate': "Live Myfxbook win rates: Lite: 84.2% • Pro: 89.4% • Apex: 92.1%. All from real live accounts — not backtests.",
   'xauusd': "XAUUSD (Gold) is available on Pro and Apex. Apex averages +46 pip moves on gold using the AI entry system. One of our best-performing pairs! 🥇",
-  'refund': "30-day no-questions-asked money-back guarantee on all bot purchases. Email support@bybforge.com within 30 days for a full refund.",
+  'refund': "30-day no-questions-asked money-back guarantee on all bot purchases. Email support@bybalpha.com within 30 days for a full refund.",
   'price': "One-time payments — no subscriptions! Lite: £79 • Pro: £149 • Apex: £299. AlphaForge custom starts at £299. Pro and Apex include free future updates.",
-  'default': "Great question! For more detail, check our FAQ page or join our Discord (discord.gg/J2tZEaQJM) where traders actively running the bots can help. Email support@bybforge.com for anything else! 🤖"
+  'default': "Great question! For more detail, check our FAQ page or join our Discord (discord.gg/J2tZEaQJM) where traders actively running the bots can help. Email support@bybalpha.com for anything else! 🤖"
 };
 
 function sendChat() {
@@ -2314,12 +3361,143 @@ function sendChat() {
 }
 
 /* ====== CONTACT FORM ====== */
+/* ====== PAYMENT SYSTEM ====== */
+function selectProduct(productId) {
+  const buttons = document.querySelectorAll('.product-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.closest('.product-btn').classList.add('active');
+  
+  const prices = { lite: 79, pro: 149, apex: 299 };
+  const names = { lite: 'Unwicked Lite', pro: 'Unwicked Pro', apex: 'Forge Apex' };
+  const price = prices[productId];
+  const name = names[productId];
+  
+  document.getElementById('planNameSummary').textContent = name;
+  document.getElementById('planPriceSummary').textContent = '£' + price + '.00';
+  document.getElementById('totalAmount').textContent = '£' + price + '.00';
+  document.getElementById('checkoutBtn').innerHTML = '<span>💳 Complete Purchase — £' + price + '.00</span>';
+}
+
+function formatCardNumber(input) {
+  let value = input.value.replace(/\s/g, '').slice(0, 16);
+  let formatted = value.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+  input.value = formatted;
+}
+
+function cardNumberKeydown(event) {
+  if (event.key === 'Backspace' && event.target.value.endsWith(' ')) {
+    event.target.value = event.target.value.slice(0, -2);
+  }
+}
+
+function formatExpiry(input) {
+  let value = input.value.replace(/\D/g, '');
+  if (value.length >= 2) {
+    value = value.slice(0, 2) + '/' + value.slice(2, 4);
+  }
+  input.value = value;
+}
+
+function flipCard() {
+  const card = document.getElementById('paymentCard');
+  if (card) {
+    card.classList.add('flipped');
+    card.focus();
+  }
+}
+
+function unflipCard() {
+  const card = document.getElementById('paymentCard');
+  if (card) card.classList.remove('flipped');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const card = document.getElementById('paymentCard');
+  if (card) {
+    card.addEventListener('mouseleave', unflipCard);
+  }
+  const cvvInput = document.getElementById('cardCVV');
+  if (cvvInput) {
+    cvvInput.addEventListener('blur', unflipCard);
+  }
+});
+
+function updateCardDisplay() {
+  const name = (document.getElementById('cardName').value || 'YOUR NAME').toUpperCase().slice(0, 26);
+  document.getElementById('cardNameDisplay').textContent = name || 'YOUR NAME';
+  
+  let cardNum = document.getElementById('cardNumber').value.replace(/\s/g, '');
+  if (cardNum.length === 0) cardNum = '4242424242424242';
+  const display = cardNum.split('').map((d, i) => i < 4 || i >= cardNum.length - 4 ? d : '•').join('');
+  const spaced = display.replace(/(.{4})(?=.)/g, '$1 ');
+  document.getElementById('cardNumberDisplay').textContent = spaced || '•••• •••• •••• 4242';
+  
+  let expiry = document.getElementById('cardExpiry').value;
+  document.getElementById('cardDateDisplay').textContent = expiry || '12/28';
+  
+  let cvv = document.getElementById('cardCVV').value;
+  document.getElementById('cardCVVDisplay').textContent = cvv ? '•'.repeat(cvv.length) : '•••';
+  document.getElementById('cardCVVFull').textContent = cvv || '•••';
+}
+
+function processPayment(btn) {
+  const cardNum = document.getElementById('cardNumber').value.replace(/\s/g, '');
+  const expiry = document.getElementById('cardExpiry').value;
+  const cvv = document.getElementById('cardCVV').value;
+  const name = document.getElementById('cardName').value;
+  const country = document.getElementById('country').value;
+  
+  let valid = true;
+  [cardNum, expiry, cvv, name, country].forEach(v => {
+    if (!v) valid = false;
+  });
+  
+  if (!valid || cardNum.length !== 16 || !expiry.includes('/') || cvv.length < 3) {
+    btn.style.borderColor = 'var(--bear)';
+    setTimeout(() => btn.style.borderColor = '', 1500);
+    return;
+  }
+  
+  const orig = btn.innerHTML;
+  btn.classList.add('processing');
+  btn.innerHTML = '<span>⟳ Processing payment...</span>';
+  btn.disabled = true;
+  
+  setTimeout(() => {
+    btn.classList.remove('processing');
+    btn.innerHTML = '<span>✓ Purchase Complete!</span>';
+    btn.style.background = 'var(--bull)';
+    
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.style.background = '';
+      btn.disabled = false;
+      
+      const card = document.getElementById('paymentCard');
+      if (card.classList.contains('flipped')) card.classList.remove('flipped');
+      
+      document.getElementById('cardName').value = '';
+      document.getElementById('cardNumber').value = '';
+      document.getElementById('cardExpiry').value = '';
+      document.getElementById('cardCVV').value = '';
+      updateCardDisplay();
+      
+      alert('✓ Thank you for your purchase!\n\nYour account has been created. Check your email for login credentials and setup instructions.');
+    }, 2500);
+  }, 2200);
+}
+
+function updateCard() {
+  updateCardDisplay();
+}
+
 function submitContact(btn) {
-  const fname = document.getElementById('cf-fname')?.value;
   const email = document.getElementById('cf-email')?.value;
   if (!email || !email.includes('@')) {
-    document.getElementById('cf-email').style.borderColor = 'var(--bear)';
-    setTimeout(() => document.getElementById('cf-email').style.borderColor = '', 2000);
+    if (document.getElementById('cf-email')) {
+      document.getElementById('cf-email').style.borderColor = 'var(--bear)';
+      setTimeout(() => document.getElementById('cf-email').style.borderColor = '', 2000);
+    }
     return;
   }
   const orig = btn.innerHTML;
@@ -2354,10 +3532,153 @@ setInterval(() => {
   if (lastUpdateSecs >= 30) { lastUpdateSecs = 0; if (document.getElementById('page-dashboard').classList.contains('active')) drawDashCharts(); }
 }, 1000);
 
+/* ====== NEW FEATURES: FAQ, CHART, COUNTERS ====== */
+
+// Collapsible FAQ
+function toggleFaqItem(el) {
+  el.classList.toggle('open');
+}
+
+// Testimonials Carousel
+let currentTestimonial = 0;
+let totalTestimonials = 0;
+let carouselInterval;
+
+function goToTestimonial(index) {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  currentTestimonial = index;
+  
+  slides.forEach((slide, i) => {
+    slide.setAttribute('data-active', i === index);
+  });
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  
+  clearInterval(carouselInterval);
+  startAutoAdvance();
+}
+
+function nextTestimonial() {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  currentTestimonial = (currentTestimonial + 1) % slides.length;
+  goToTestimonial(currentTestimonial);
+}
+
+function prevTestimonial() {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  currentTestimonial = (currentTestimonial - 1 + slides.length) % slides.length;
+  goToTestimonial(currentTestimonial);
+}
+
+function startAutoAdvance() {
+  carouselInterval = setInterval(() => {
+    nextTestimonial();
+  }, 6000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  totalTestimonials = slides.length;
+  
+  slides.forEach((slide, i) => {
+    slide.setAttribute('data-active', i === 0);
+  });
+  
+  startAutoAdvance();
+  
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCtrBoxes();
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  const statsBanner = document.querySelector('.stats-banner');
+  if (statsBanner) statsObserver.observe(statsBanner);
+});
+
+window.addEventListener('load', () => {
+  setTimeout(drawPerformanceChart, 500);
+});
+
+// Performance Chart Drawing (Equity Curve)
+function drawPerformanceChart() {
+  const canvas = document.getElementById('perfChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.offsetWidth;
+  const h = canvas.offsetHeight;
+  canvas.width = w;
+  canvas.height = h;
+  
+  // Generate sample equity curve data
+  const data = [];
+  let equity = 10000;
+  for (let i = 0; i < 365; i++) {
+    equity += (Math.random() - 0.4) * 150; // Upward bias
+    data.push(equity);
+  }
+  
+  const minEquity = Math.min(...data);
+  const maxEquity = Math.max(...data);
+  const range = maxEquity - minEquity;
+  
+  ctx.strokeStyle = '#26a69a';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  
+  for (let i = 0; i < data.length; i++) {
+    const x = (i / data.length) * w;
+    const y = h - ((data[i] - minEquity) / range) * (h - 40);
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+  
+  // Fill area under curve
+  ctx.lineTo(w, h);
+  ctx.lineTo(0, h);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(38, 166, 154, 0.1)';
+  ctx.fill();
+}
+
+// Counter animations for stats
+function animateCtrBoxes() {
+  const ctrBoxes = document.querySelectorAll('.ctr-box');
+  ctrBoxes.forEach(box => {
+    const target = parseInt(box.dataset.target);
+    const isFormatted = target > 1000;
+    let current = 0;
+    const step = Math.ceil(target / 40);
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(interval);
+      }
+      if (isFormatted && current > 1000) {
+        box.textContent = (current / 1000000).toFixed(2) + 'M';
+      } else if (isFormatted) {
+        box.textContent = current.toLocaleString();
+      } else {
+        box.textContent = current.toFixed(1) + '%';
+      }
+    }, 30);
+  });
+}
+
 /* ====== INIT ====== */
-window.addEventListener('load', () => { drawHeroChart(); });
+window.addEventListener('load', () => { drawHeroChart(); drawPerformanceChart(); });
 window.addEventListener('resize', () => {
   drawHeroChart();
+  drawPerformanceChart();
   if (document.getElementById('page-dashboard').classList.contains('active')) drawDashCharts();
 });
 </script>
